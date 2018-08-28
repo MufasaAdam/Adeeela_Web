@@ -2496,7 +2496,7 @@ a {
 blockquote {
   margin: 20px 0;
   padding-left: 1.5rem;
-  border-left: 5px solid #ee6e73
+  border-left: 5px solid #fb8c00
 }
 
 i {
@@ -2805,7 +2805,7 @@ th {
   display: table-cell;
   text-align: left;
   vertical-align: middle;
-  border-radius: 2px
+  /* border-radius: 2px */
 }
 
 @media only screen and (max-width: 992px) {
@@ -4071,7 +4071,7 @@ nav ul a span.badge {
 nav {
   color: #fff;
   width: 100%;
-  line-height: 56px;
+  line-height: 49px;
   border-bottom: 1px solid #000;
 }
 
@@ -4105,8 +4105,8 @@ nav i.material-icons {
 
 nav .nav-wrapper {
   position: relative;
-  line-height: 60px;
-  height: 90px;
+  line-height: 49px;
+  height: 49px;
 }
 
 @media only screen and (min-width: 993px) {

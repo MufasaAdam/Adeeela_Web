@@ -8,7 +8,7 @@
     <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css" media="screen,projection" />
     <link type="text/css" rel="stylesheet" href="assets/css/master.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Adeela</title>
+    <title>Agencies</title>
 </head>
 
 <body>
@@ -23,7 +23,7 @@
         <ul id="slide-out" class="side-nav fixed borderNoShad teal lighten-2">
             <ul class="collapsible" data-collapisble="accordion">
                 <li class="teal lighten-2">
-                    <a class="collapsible-header active waves-effect">Manage
+                    <a class="collapsible-header waves-effect white-text">Manage
                         <i class="glyphicon glyphicon-menu-down right white-text"></i>
                     </a>
                     <div class="collapsible-body">
@@ -34,7 +34,7 @@
                             <li>
                                 <a href="city.html" class="waves-effect waves-light">City</a>
                             </li>
-                            <li class="active">
+                            <li>
                                 <a href="destination.html" class="waves-effect waves-light">Destinations</a>
                             </li>
                             <li>
@@ -47,7 +47,7 @@
                     </div>
                 </li>
                 <li class="teal lighten-2">
-                    <a class="collapsible-header waves-effect white-text">Reports
+                    <a class="collapsible-header waves-effect active white-text">Reports
                         <i class="glyphicon glyphicon-menu-down right white-text"></i>
                     </a>
                     <div class="collapsible-body">
@@ -55,7 +55,7 @@
                             <li>
                                 <a href="booking.html" class="waves-effect waves-light">Bookings</a>
                             </li>
-                            <li>
+                            <li class="active">
                                 <a href="agencies_reports.html" class="waves-effect waves-light">Agencies</a>
                             </li>
                             <li>
@@ -70,48 +70,63 @@
             <div class="mainCnt white">
                 <form action="">
                     <div class="row">
-                        <div class="col s12" style="padding:0;">
-                            <div class="orange darken-1 white-text center" style="border-bottom: 1px solid black; padding: 10px;">
-                                <h4 style="margin:0;">Destinations</h4>
-                            </div>
+                        <div class="col s12 l12">
+                            <blockquote>
+                                <h4>Manage Agencies</h4>
+                            </blockquote>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="input-field col s12 l4">
-                            <select name="" id="">
-                                <option value="" disabled selected>Select From</option>
-                                <option value="">City A</option>
-                                <option value="">City A</option>
-                                <option value="">City A</option>
-                                <option value="">City A</option>
-                                <option value="">City A</option>
-                                <option value="">City A</option>
-                            </select>
-                            <label>From</label>
-                        </div>
-                        <div class="input-field col s12 l4">
-                            <select name="" id="">
-                                <option value="" disabled selected>Select To</option>
-                                <option value="1">City B</option>
-                                <option value="2">City B</option>
-                                <option value="3">City B</option>
-                                <option value="4">City B</option>
-                                <option value="5">City B</option>
-                                <option value="6">City B</option>
-                                <option value="7">City B</option>
-                            </select>
-                            <label for="">To</label>
-                        </div>
-                        <div class="input-field col s12 l4">
-                            <input id="timepkr" type="text" class="timepicker">
-                            <label for="timepkr">Time</label>
-                        </div>
-                        <div class="row">
-                            <div class="input-feild col s12 center">
-                                <button class="btn btn-larger waves-effect waves-light teal lighten-2" style="width:80%;">Add</button>
-                            </div>
-                        </div>
-                    </div>
+                    <table class="highlight centered responsive-table bookingTable">
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Agency (en)</th>
+                                <th>Agency (ar)</th>
+                                <th>Owner (en)</th>
+                                <th>Owner (ar)</th>
+                                <th>Owner's Phone No.</th>
+                                <th colspan="2"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Damer</td>
+                                <td>{remad}</td>
+                                <td>{Name here}</td>
+                                <td>{ereh eman}</td>
+                                <td>0912345678</td>
+                                <td>
+                                    <a href="">
+                                        <span class="glyphicon glyphicon-pencil green-text" aria-hidden="true"></span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="">
+                                        <span class="glyphicon glyphicon-trash red-text" aria-hidden="true"></span>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Damer</td>
+                                <td>{remad}</td>
+                                <td>{Name here}</td>
+                                <td>{ereh eman}</td>
+                                <td>0912345678</td>
+                                <td>
+                                    <a href="">
+                                        <span class="glyphicon glyphicon-pencil green-text" aria-hidden="true"></span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="">
+                                        <span class="glyphicon glyphicon-trash red-text" aria-hidden="true"></span>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </form>
             </div>
         </div>
