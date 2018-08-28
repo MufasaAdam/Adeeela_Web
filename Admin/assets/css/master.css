@@ -1,0 +1,430 @@
+html {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #fefefe;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+/*======================================
+            Login Page / Admin
+=======================================*/
+
+.header h1 {
+  margin: 0;
+}
+
+.footer {
+  padding: 10px 10px;
+  color: #fff;
+  width: 100%;
+  bottom: 0;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.login-box {
+  background-color: rgba(255, 255, 255, 0.58);
+  border: 1px solid #ee6e73;
+  border-radius: 10px;
+  position: relative;
+  margin-top: 14.5%;
+  left: 30%;
+  width: 40%;
+  z-index: 1;
+}
+
+.btn.lgn {
+  width: 100%;
+  background-color: rgb(93, 64, 55);
+}
+
+div.svg1 {
+  z-index: 0;
+}
+
+svg {
+  z-index: 0;
+  position: absolute;
+  transform: translateY(-385px);
+  margin-left: 41.25%;
+  width: 17.5%;
+}
+
+path.first {
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 500;
+  animation-name: leaf1, fill1;
+  animation-duration: 2s, 2s;
+  stroke-opacity: 1;
+  fill: url(#firstLeaf);
+  fill-opacity: 0;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+  animation-delay: 0s, 0s;
+}
+
+@keyframes fill1 {
+  from {
+    fill-opacity: 0;
+  }
+  to {
+    fill-opacity: 1;
+  }
+}
+
+@keyframes leaf1 {
+  from {
+    stroke-opacity: 1;
+    stroke-dashoffset: 2000;
+  }
+  to {
+    stroke-opacity: 0;
+  }
+}
+
+path.second {
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 500;
+  fill: url(#secondLeaf);
+  fill-opacity: 0;
+  animation-name: leaf2, fill2;
+  animation-duration: 2s, 2s;
+  stroke-opacity: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+  animation-delay: 0s, 0s;
+}
+
+@keyframes fill2 {
+  from {
+    fill-opacity: 0;
+  }
+  to {
+    fill-opacity: 1;
+  }
+}
+
+@keyframes leaf2 {
+  from {
+    stroke-opacity: 1;
+    stroke-dashoffset: 2000;
+  }
+  to {
+    stroke-opacity: 0;
+  }
+}
+
+path.third {
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 500;
+  fill: url(#thirdLeaf);
+  fill-opacity: 0;
+  animation-name: leaf3, fill3;
+  animation-duration: 2s, 2s;
+  stroke-opacity: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+  animation-delay: 0s, 0s;
+}
+
+@keyframes fill3 {
+  from {
+    fill-opacity: 0;
+  }
+  to {
+    fill-opacity: 1;
+  }
+}
+
+@keyframes leaf3 {
+  from {
+    stroke-opacity: 1;
+    stroke-dashoffset: 2000;
+  }
+  to {
+    stroke-opacity: 0;
+  }
+}
+
+path.fourth {
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 500;
+  fill: url(#fourthLeaf);
+  fill-opacity: 0;
+  animation-name: leaf4, fill4;
+  animation-duration: 2s, 2s;
+  stroke-opacity: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+  animation-delay: 0s, 0s;
+}
+
+@keyframes fill4 {
+  from {
+    fill-opacity: 0;
+  }
+  to {
+    fill-opacity: 1;
+  }
+}
+
+@keyframes leaf4 {
+  from {
+    stroke-opacity: 1;
+    stroke-dashoffset: 2000;
+  }
+  to {
+    stroke-opacity: 0;
+  }
+}
+
+path.fifth {
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 500;
+  fill: url(#fifthLeaf);
+  fill-opacity: 0;
+  animation-name: leaf5, fill5;
+  animation-duration: 2s, 2s;
+  stroke-opacity: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+  animation-delay: 0s, s;
+}
+
+@keyframes fill5 {
+  from {
+    fill-opacity: 0;
+  }
+  to {
+    fill-opacity: 1;
+  }
+}
+
+@keyframes leaf5 {
+  from {
+    stroke-opacity: 1;
+    stroke-dashoffset: 2000;
+  }
+  to {
+    stroke-opacity: 0;
+  }
+}
+
+/*==========================================
+---------------Menu------------------------
+============================================*/
+
+@media only screen and (max-width: 469px) {
+  .brand-logo.center {
+    font-size: 24px;
+  }
+}
+
+@media only screen and (max-width: 382px) {
+  .brand-logo.center {
+    font-size: 18px;
+  }
+}
+
+.borderNoShad {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  border-right: 1px solid black;
+}
+
+.side-nav li > a:hover {
+  background-color: rgba(#ee6e73, 0.54);
+  color: #000;
+}
+
+nav {
+  position: fixed;
+  z-index: 999 !important;
+  height: 56px;
+}
+
+.nav-wrapper {
+  height: 56px !important;
+  border-bottom: 1px solid black;
+}
+
+.page-footer.a {
+  margin-left: 200px;
+  width: calc(100% - 200px);
+}
+
+.workspace {
+  padding: 10px 30px;
+  position: static;
+  margin-top: 61px;
+  margin-left: 200px;
+  height: 100%;
+  /*border: 1px solid black;*/
+  width: calc(100% - 200px);
+}
+
+a.brand-logo.center {
+  height: 100%;
+}
+
+.mainCnt {
+  border: .5px solid black;
+  margin-bottom: 25px;
+  border-radius: 3px; 
+}
+
+.form_header {
+  padding: 10px;
+  border-bottom: 1px solid black;
+  background-color: #dd4a35;
+}
+
+.myBtn {
+  font-size: 8px;
+}
+
+.timeTable {
+  margin: 2% 0%;
+  border: 1px solid black;
+}
+
+.TT_header {
+  background: #dd4a35;
+  border-bottom: 1px solid black;
+  padding: 10px;
+}
+
+.tablePadding {
+  width: 97%;
+  margin: auto;
+  padding-bottom: 35px;
+}
+
+p.form_headerTxt {
+  margin: 0;
+  color: #fff;
+  text-shadow: 0 0 1px #111;
+  font-weight: bolder;
+  font-size: 1.05em;
+}
+
+.logo {
+  width: 250px;
+  line-height: 80px;
+}
+
+.ott_logo {
+  width: 120px;
+  height: 90px;
+  padding-left: 30px;
+}
+
+.timeSched tr td:nth-child(1) {
+  width: 100px;
+  background-color: #cccccc;
+  border-radius: 0;
+  border: 1px solid #fff;
+  margin: 0;
+  font-weight: bold;
+}
+
+.timeSched th {
+  background-color: #cccccc;
+  border-radius: 0;
+  border: 1px solid #fff;
+}
+
+.timeSched tr td {
+  border-bottom: 1px solid #999;
+  border-right: 1px solid #999;
+}
+
+/* Divider */
+
+div.divider {
+  width: 100px;
+  height: 50px;
+  background-color: #cccccc;
+  position: relative;
+  margin: 0%;
+}
+
+div.divider:after {
+  top: 0;
+  left: 0;
+  content: "";
+  position: absolute;
+  border-top: 1px solid #dd4a35;
+  width: 112px;
+  transform: rotate(26.5deg);
+  transform-origin: 0% 0%;
+}
+
+div.divider div {
+  display: inline-block;
+  /*   border: 1px solid black; */
+}
+
+.day {
+  float: left;
+  position: relative;
+  left: 12px;
+  font-size: 18px;
+  /* transform: rotate(26.5deg); */
+}
+
+.time {
+  padding: 0;
+  font-size: 18px;
+  right: 10px;
+  top: -15px;
+  position: relative;
+  float: right;
+  /* transform: rotate(26.5deg) */
+}
+
+@media only screen and (max-width: 600px) {
+  #logo {
+    visibility: hidden;
+  }
+}
+
+/* Screen with the size of 992px */
+
+@media only screen and (max-width: 992px) {
+  .page-footer.a {
+    margin: 0;
+    width: 100%;
+  }
+  .workspace {
+    width: 100%;
+    margin-left: 0;
+  }
+  .side-nav {
+    height: 100%;
+  }
+  #logo {
+    margin-left: 2%;
+  }
+}
+
+@media only screen and (max-width: 728px) {
+  div.row.col.s12.pt1 .input-field.col.s4 {
+    width: 100%;
+  }
+  div.row.col.s12.pt2 .input-field.col {
+    width: 100%;
+  }
+}
+
