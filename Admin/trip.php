@@ -1,3 +1,6 @@
+<?php 
+include('incloud/condb.php');
+?>	
 <!DOCTYPE html>
 <html>
 
@@ -29,19 +32,19 @@
                     <div class="collapsible-body">
                         <ul class="orange lighten-5">
                             <li>
-                                <a href="agency.html" class="waves-effect waves-light">Agency</a>
+                                <a href="agency.php" class="waves-effect waves-light">Agency</a>
                             </li>
                             <li>
-                                <a href="city.html" class="waves-effect waves-light">City</a>
+                                <a href="city.php" class="waves-effect waves-light">City</a>
                             </li>
                             <li>
-                                <a href="destination.html" class="waves-effect waves-light">Destinations</a>
+                                <a href="destination.php" class="waves-effect waves-light">Destinations</a>
                             </li>
                             <li class="active">
-                                <a href="trip.html" class="waves-effect waves-light">Trip</a>
+                                <a href="trip.php" class="waves-effect waves-light">Trip</a>
                             </li>
                             <li>
-                                <a href="bus.html" class="waves-effect waves-light">Bus</a>
+                                <a href="bus.php" class="waves-effect waves-light">Bus</a>
                             </li>
                         </ul>
                     </div>
@@ -53,13 +56,13 @@
                     <div class="collapsible-body">
                         <ul class="orange lighten-5">
                             <li>
-                                <a href="booking.html" class="waves-effect waves-light">Bookings</a>
+                                <a href="booking.php" class="waves-effect waves-light">Bookings</a>
                             </li>
                             <li>
-                                <a href="agencies_reports.html" class="waves-effect waves-light">Agencies</a>
+                                <a href="agencies_reports.php" class="waves-effect waves-light">Agencies</a>
                             </li>
                             <li>
-                                <a href="user.html" class="waves-effect waves-light">Users</a>
+                                <a href="user.php" class="waves-effect waves-light">Users</a>
                             </li>
                         </ul>
                     </div>
@@ -79,12 +82,18 @@
                             <div class="input-field col s12 l4">
                                 <select name="" id="">
                                     <option value="" disabled selected>Choose Agency</option>
-                                    <option value="">1</option>
-                                    <option value="">1</option>
-                                    <option value="">1</option>
-                                    <option value="">1</option>
-                                    <option value="">1</option>
-                                    <option value="">1</option>
+                                    <?php
+                                 $sqls = "SELECT * FROM `agencies`";
+                                 $result = $mysqli->query($sqls);
+                                 if ($result->num_rows > 0) {
+                                     while($row = $result->fetch_assoc()){
+                                         ?>
+                                         <option value="<?php echo $row['agency_id'] ?>">
+                                         <?php echo $row['agency_name_english']; ?> -- <?php echo $row['agency_name_arabic']; ?> </option>
+                                         <?php
+                                         }
+                                        }
+                                        ?>
                                 </select>
                                 <label>Agnecy</label>
                             </div>
@@ -94,14 +103,18 @@
                             </div>
                             <div class="input-field col s12 l4">
                                 <select name="" id="">
-                                    <option value="" disabled selected>Choose Day</option>
-                                    <option value="1">Sunday</option>
-                                    <option value="2">Monday</option>
-                                    <option value="3">Tuesday</option>
-                                    <option value="4">Wednesday</option>
-                                    <option value="5">Thursday</option>
-                                    <option value="6">Friday</option>
-                                    <option value="7">Saturday</option>
+                                <?php
+                                 $sqls = "SELECT * FROM `days`";
+                                 $result = $mysqli->query($sqls);
+                                 if ($result->num_rows > 0) {
+                                     while($row = $result->fetch_assoc()){
+                                         ?>
+                                         <option value="<?php echo $row['day_id'] ?>">
+                                         <?php echo $row['day_english']; ?> -- <?php echo $row['day_arabic']; ?> </option>
+                                         <?php
+                                         }
+                                        }
+                                        ?>
                                 </select>
                                 <label for="">Day</label>
                             </div>
@@ -127,9 +140,18 @@
                                 <div class="input-field col s12 l4">
                                     <select name="" id="">
                                         <option value="" disabled selected>Select Destination</option>
-                                        <option value="1">:1</option>
-                                        <option value="2">:2</option>
-                                        <option value="3">:3</option>
+                                        <?php
+                                 $sqls = "SELECT * FROM `cities` as a,`destination` as b  WHERE b.`to` =a.`city_id` and  b.`from` =a.`city_id`";
+                                 $result = $mysqli->query($sqls);
+                                 if ($result->num_rows > 0) {
+                                     while($row = $result->fetch_assoc()){
+                                         ?>
+                                         <option value="<?php echo $row['desitination_id'] ?>">
+                                         From <?php echo $row['from']; ?> To <?php echo $row['to']; ?> </option>
+                                         <?php
+                                         }
+                                        }
+                                        ?>
                                         <label for="">Destination ID</label>
                                     </select>
                                 </div>

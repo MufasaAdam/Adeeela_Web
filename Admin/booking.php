@@ -8,7 +8,7 @@
     <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css" media="screen,projection" />
     <link type="text/css" rel="stylesheet" href="assets/css/master.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Agencies</title>
+    <title>Bookings</title>
 </head>
 
 <body>
@@ -29,19 +29,19 @@
                     <div class="collapsible-body">
                         <ul class="orange lighten-5">
                             <li>
-                                <a href="agency.html" class="waves-effect waves-light">Agency</a>
+                                <a href="agency.php" class="waves-effect waves-light">Agency</a>
                             </li>
                             <li>
-                                <a href="city.html" class="waves-effect waves-light">City</a>
+                                <a href="city.php" class="waves-effect waves-light">City</a>
                             </li>
                             <li>
-                                <a href="destination.html" class="waves-effect waves-light">Destinations</a>
+                                <a href="destination.php" class="waves-effect waves-light">Destinations</a>
                             </li>
                             <li>
-                                <a href="trip.html" class="waves-effect waves-light">Trip</a>
+                                <a href="trip.php" class="waves-effect waves-light">Trip</a>
                             </li>
                             <li>
-                                <a href="bus.html" class="waves-effect waves-light">Bus</a>
+                                <a href="bus.php" class="waves-effect waves-light">Bus</a>
                             </li>
                         </ul>
                     </div>
@@ -52,14 +52,14 @@
                     </a>
                     <div class="collapsible-body">
                         <ul class="orange lighten-5">
-                            <li>
-                                <a href="booking.html" class="waves-effect waves-light">Bookings</a>
-                            </li>
                             <li class="active">
-                                <a href="agencies_reports.html" class="waves-effect waves-light">Agencies</a>
+                                <a href="booking.php" class="waves-effect waves-light">Bookings</a>
                             </li>
                             <li>
-                                <a href="user.html" class="waves-effect waves-light">Users</a>
+                                <a href="agencies_reports.php" class="waves-effect waves-light">Agencies</a>
+                            </li>
+                            <li>
+                                <a href="user.php" class="waves-effect waves-light">Users</a>
                             </li>
                         </ul>
                     </div>
@@ -72,7 +72,7 @@
                     <div class="row">
                         <div class="col s12 l12">
                             <blockquote>
-                                <h4>Manage Agencies</h4>
+                                <h4>Customer's Booking Info</h4>
                             </blockquote>
                         </div>
                     </div>
@@ -80,50 +80,26 @@
                         <thead>
                             <tr>
                                 <th>No.</th>
-                                <th>Agency (en)</th>
-                                <th>Agency (ar)</th>
-                                <th>Owner (en)</th>
-                                <th>Owner (ar)</th>
-                                <th>Owner's Phone No.</th>
-                                <th colspan="2"></th>
+                                <th>Passenger's Name</th>
+                                <th>Phone No.</th>
+                                <th>Trip</th>
+                                <th>Date</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>1</td>
-                                <td>Damer</td>
-                                <td>{remad}</td>
-                                <td>{Name here}</td>
-                                <td>{ereh eman}</td>
+                                <td>Ahmed Mohammed</td>
                                 <td>0912345678</td>
-                                <td>
-                                    <a href="">
-                                        <span class="glyphicon glyphicon-pencil green-text" aria-hidden="true"></span>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="">
-                                        <span class="glyphicon glyphicon-trash red-text" aria-hidden="true"></span>
-                                    </a>
-                                </td>
+                                <td>Khartoum - Attbara</td>
+                                <td>30/8/2018</td>
                             </tr>
                             <tr>
                                 <td>2</td>
-                                <td>Damer</td>
-                                <td>{remad}</td>
-                                <td>{Name here}</td>
-                                <td>{ereh eman}</td>
-                                <td>0912345678</td>
-                                <td>
-                                    <a href="">
-                                        <span class="glyphicon glyphicon-pencil green-text" aria-hidden="true"></span>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="">
-                                        <span class="glyphicon glyphicon-trash red-text" aria-hidden="true"></span>
-                                    </a>
-                                </td>
+                                <td>Mohammed</td>
+                                <td>0987654321</td>
+                                <td>Khartoum - Port Sudan</td>
+                                <td>1/9/2018</td>
                             </tr>
                         </tbody>
                     </table>

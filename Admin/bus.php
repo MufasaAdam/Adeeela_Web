@@ -8,7 +8,7 @@
     <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css" media="screen,projection" />
     <link type="text/css" rel="stylesheet" href="assets/css/master.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Adeela</title>
+    <title>Bus</title>
 </head>
 
 <body>
@@ -23,25 +23,25 @@
         <ul id="slide-out" class="side-nav fixed borderNoShad teal lighten-2">
             <ul class="collapsible" data-collapisble="accordion">
                 <li class="teal lighten-2">
-                    <a class="collapsible-header active waves-effect">Manage
+                    <a class="collapsible-header active waves-effect white-text">Manage
                         <i class="glyphicon glyphicon-menu-down right white-text"></i>
                     </a>
                     <div class="collapsible-body">
                         <ul class="orange lighten-5">
                             <li>
-                                <a href="agency.html" class="waves-effect waves-light">Agency</a>
+                                <a href="agency.php" class="waves-effect waves-light">Agency</a>
                             </li>
                             <li>
-                                <a href="city.html" class="waves-effect waves-light">City</a>
+                                <a href="city.php" class="waves-effect waves-light">City</a>
+                            </li>
+                            <li>
+                                <a href="destination.php" class="waves-effect waves-light">Destinations</a>
+                            </li>
+                            <li>
+                                <a href="trip.php" class="waves-effect waves-light">Trip</a>
                             </li>
                             <li class="active">
-                                <a href="destination.html" class="waves-effect waves-light">Destinations</a>
-                            </li>
-                            <li>
-                                <a href="trip.html" class="waves-effect waves-light">Trip</a>
-                            </li>
-                            <li>
-                                <a href="bus.html" class="waves-effect waves-light">Bus</a>
+                                <a href="bus.php" class="waves-effect waves-light">Bus</a>
                             </li>
                         </ul>
                     </div>
@@ -53,13 +53,13 @@
                     <div class="collapsible-body">
                         <ul class="orange lighten-5">
                             <li>
-                                <a href="booking.html" class="waves-effect waves-light">Bookings</a>
+                                <a href="booking.php" class="waves-effect waves-light">Bookings</a>
                             </li>
                             <li>
-                                <a href="agencies_reports.html" class="waves-effect waves-light">Agencies</a>
+                                <a href="agencies.php" class="waves-effect waves-light">Agencies</a>
                             </li>
                             <li>
-                                <a href="user.html" class="waves-effect waves-light">Users</a>
+                                <a href="users.php" class="waves-effect waves-light">Users</a>
                             </li>
                         </ul>
                     </div>
@@ -72,39 +72,35 @@
                     <div class="row">
                         <div class="col s12" style="padding:0;">
                             <div class="orange darken-1 white-text center" style="border-bottom: 1px solid black; padding: 10px;">
-                                <h4 style="margin:0;">Destinations</h4>
+                                <h4 style="margin:0;">Bus</h4>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12 l4">
-                            <select name="" id="">
-                                <option value="" disabled selected>Select From</option>
-                                <option value="">City A</option>
-                                <option value="">City A</option>
-                                <option value="">City A</option>
-                                <option value="">City A</option>
-                                <option value="">City A</option>
-                                <option value="">City A</option>
-                            </select>
-                            <label>From</label>
-                        </div>
-                        <div class="input-field col s12 l4">
-                            <select name="" id="">
-                                <option value="" disabled selected>Select To</option>
-                                <option value="1">City B</option>
-                                <option value="2">City B</option>
-                                <option value="3">City B</option>
-                                <option value="4">City B</option>
-                                <option value="5">City B</option>
-                                <option value="6">City B</option>
-                                <option value="7">City B</option>
-                            </select>
-                            <label for="">To</label>
-                        </div>
-                        <div class="input-field col s12 l4">
-                            <input id="timepkr" type="text" class="timepicker">
-                            <label for="timepkr">Time</label>
+                        <div class="row">
+                            <div class="input-field col s12 l4">
+                                <select name="" id="">
+                                    <option value="" disabled selected>Choose Agency</option>
+                                    <option value="">1</option>
+                                    <option value="">1</option>
+                                    <option value="">1</option>
+                                    <option value="">1</option>
+                                    <option value="">1</option>
+                                    <option value="">1</option>
+                                </select>
+                                <label>Agnecy</label>
+                            </div>
+                            <div class="file-field input-field col s12 l4">
+                                <div class="btn">
+                                    <span>Bus Image</span>
+                                    <input type="file">
+                                </div>
+                                <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text">
+                                </div>
+                            </div>
+                            <div class="input-field col s12 l4">
+                                <input type="number" class="validate">
+                                <label for="busSeatNo">Bus Seat Number</label>
+                            </div>
                         </div>
                         <div class="row">
                             <div class="input-feild col s12 center">

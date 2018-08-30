@@ -1,3 +1,6 @@
+<?php 
+include('incloud/condb.php');
+?>	
 <!DOCTYPE html>
 <html>
 
@@ -20,7 +23,7 @@
         </a>
       </div>
     </nav>
-    <ul id="slide-out" class="side-nav fixed borderNoShad teal lighten-2">
+<ul id="slide-out" class="side-nav fixed borderNoShad teal lighten-2">
       <ul class="collapsible" data-collapisble="accordion">
         <li class="teal lighten-2">
           <a class="collapsible-header active waves-effect white-text">Manage
@@ -29,19 +32,16 @@
           <div class="collapsible-body">
             <ul class="orange lighten-5">
               <li class="active">
-                <a href="agency.html" class="waves-effect waves-light">Agency</a>
+                <a href="agency.php" class="waves-effect waves-light">Agency</a>
               </li>
               <li>
-                <a href="city.html" class="waves-effect waves-light">City</a>
+                <a href="city.php" class="waves-effect waves-light">City</a>
               </li>
               <li>
-                <a href="destination.html" class="waves-effect waves-light">Destinations</a>
+                <a href="destination.php" class="waves-effect waves-light">Destinations</a>
               </li>
               <li>
-                <a href="trip.html" class="waves-effect waves-light">Trip</a>
-              </li>
-              <li>
-                <a href="bus.html" class="waves-effect waves-light">Bus</a>
+                <a href="trip.php" class="waves-effect waves-light">Trip</a>
               </li>
             </ul>
           </div>
@@ -53,13 +53,13 @@
           <div class="collapsible-body">
             <ul class="orange lighten-5">
               <li>
-                <a href="booking.html" class="waves-effect waves-light">Bookings</a>
+                <a href="#!" class="waves-effect waves-light">Bookings</a>
               </li>
               <li>
-                <a href="agencies_reports.html" class="waves-effect waves-light">Agencies</a>
+                <a href="#!" class="waves-effect waves-light">Agencies</a>
               </li>
               <li>
-                <a href="user.html" class="waves-effect waves-light">Users</a>
+                <a href="#!" class="waves-effect waves-light">Users</a>
               </li>
             </ul>
           </div>
@@ -68,7 +68,7 @@
     </ul>
     <div class="workspace">
       <div class="mainCnt white">
-        <form action="">
+        <form action="agency.php" method="post">
           <div class="row">
             <div class="col s12" style="padding:0;">
               <div class="orange darken-1 white-text center" style="border-bottom: 1px solid black; padding: 10px;">
@@ -77,29 +77,47 @@
             </div>
             <div class="row">
               <div class="input-field col s12 l3">
-                <input id="" type="text" class="validate">
+                <input id=""name="agancyen" type="text" class="validate" >
                 <label for="agencyName_eng">Agency Name (en)</label>
               </div>
               <div class="input-field col s12 l3">
-                <input id="" type="text" class="validate">
+                <input name="agancyar" id="" type="text" class="validate" >
                 <label for="agencyName_arb">Agency Name (ar)</label>
               </div>
               <div class="input-field col s12 l3">
-                <input id="" type="text" class="validate">
+                <input name="ownername" id="" type="text" class="validate" >
                 <label for="owner_name">Owner's Name</label>
               </div>
               <div class="input-field col s12 l3">
-                <input id="" type="number" class="validate">
+                <input id="" name="phone" type="number" class="validate" >
                 <label for="owner_number">Owner's Number</label>
               </div>
             </div>
             <div class="row">
               <div class="input-feild col s12 center">
-                <button class="btn btn-larger waves-effect waves-light teal lighten-2" style="width:80%;">Add</button>
+                <input value="Add" type="submit" name="agancy" class="btn btn-larger waves-effect waves-light teal lighten-2" style="width:80%;">
+                  
+                
               </div>
             </div>
           </div>
         </form>
+        <?php
+        if(isset($_POST['agancy'])){
+          $agancyen    =$_POST['agancyen'];
+          $agancyar    =$_POST['agancyar'];
+          $ownername   =$_POST['ownername'];
+          $phone       =$_POST['phone'];
+          $sql         ="INSERT INTO `agencies`(`agency_name_english`, `agency_name_arabic`, `owner`,`ownphone`) VALUES ('$agancyen','$agancyar','$ownername ','$phone')";
+          if($mysqli->query($sql)===true){
+                             ?><script>alert('<?php echo'Your Agancye added';?>');</script><?php
+                                                    }
+                                                            else
+                                                            {
+                                                              echo"Error:".$sql."<br>".$mysqli->error;
+                                                            }
+                                                          }
+        ?>
       </div>
     </div>
   </main>
