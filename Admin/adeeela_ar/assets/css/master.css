@@ -1,3 +1,7 @@
+html {
+  font-family: 'Cairo', sans-serif;
+}
+
 body {
   background-color: #ebebeb;
   display: flex;
@@ -33,7 +37,6 @@ main {
   width: 100%;
   margin: auto;
   z-index: 1;
-  
 }
 
 .login-space {
@@ -59,7 +62,6 @@ main {
 /*==========================================
 ---------------Menu------------------------
 ============================================*/
-
 @media only screen and (max-width: 469px) {
   .brand-logo.center {
     font-size: 24px;
@@ -78,7 +80,7 @@ main {
   box-shadow: 0px 0px 1px black;
 }
 
-.side-nav li > a:hover {
+.side-nav li>a:hover {
   background-color: rgba(#ee6e73, 0.54);
   color: #000;
 }
@@ -91,22 +93,22 @@ nav {
 
 .nav-wrapper {
   height: 49px !important;
-  box-shadow: 0px 0px 0.5px #000; 
+  box-shadow: 0px 0px 0.5px #000;
 }
 
 .page-footer.a {
-  margin-left: 300px;
-  width: calc(100% - 300px);
+  margin-right: 250px;
+  width: calc(100% - 250px);
 }
 
 .workspace {
   padding: 10px 30px;
   position: static;
   margin-top: 61px;
-  margin-left: 300px;
+  margin-right: 250px;
   height: 100%;
   /*border: 1px solid black;*/
-width: calc(100% - 300px);
+  width: calc(100% - 250px);
 }
 
 a.brand-logo.center {
@@ -129,7 +131,7 @@ a.brand-logo.center {
 
   .workspace {
     width: 100%;
-    margin-left: 0;
+    margin-right: 0;
   }
 }
 
@@ -175,4 +177,9 @@ a.brand-logo.center {
 
 .hidden {
   visibility: hidden;
+}
+
+.langSwitch {
+  margin-left: 7px;
+  font-size: 1rem;
 }

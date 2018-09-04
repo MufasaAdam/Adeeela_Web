@@ -9,58 +9,79 @@
     <link type="text/css" rel="stylesheet" href="assets/css/master.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Agencies</title>
+    <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
+    <title>إدارة الوكالات</title>
 </head>
 
 <body>
     <main>
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="#!">Log out</a></li>
+            <li class="divider"></li>
+            <div class="switch" style="margin:auto;">
+                <label class="langSwitch">
+                    en
+                    <input type="checkbox" checked>
+                    <span class="lever"></span>
+                    ar
+                </label>
+            </div>
+        </ul>
         <nav>
-            <div class="nav-wrapper teal lighten-2">
-                <a href="#" data-activates="slide-out" class="button-collapse left">
-                    <i class="glyphicon glyphicon-menu-hamburger"></i>
-                </a>
+            <div class="nav-wrapper teal lighten-1">
+                <ul>
+                    <li class="right">
+                        <a href="#" data-activates="slide-out" class="button-collapse left">
+                            <i class="glyphicon glyphicon-menu-hamburger"></i>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="left">
+                    <li><a class="dropdown-button waves-effect waves-light" href="#!" data-activates="dropdown1"><i
+                                class="material-icons right" style="margin: 0;">settings</i></a></li>
+                </ul>
             </div>
         </nav>
-        <ul id="slide-out" class="side-nav fixed borderNoShad teal lighten-2">
+        <ul id="slide-out" class="side-nav fixed borderNoShad right-aligned teal lighten-1">
             <ul class="collapsible" data-collapisble="accordion">
-                <li class="teal lighten-2">
-                    <a class="collapsible-header waves-effect white-text">Manage
-                        <i class="glyphicon glyphicon-menu-down right white-text"></i>
+                <li class="teal lighten-1">
+                    <a class="collapsible-header waves-effect white-text">تدبير
+                        <i class="glyphicon glyphicon-menu-down left white-text"></i>
                     </a>
                     <div class="collapsible-body">
                         <ul class="orange lighten-5">
                             <li>
-                                <a href="agency.html" class="waves-effect waves-light">Agency</a>
+                                <a href="agency.html" class="waves-effect waves-light">وكالة</a>
                             </li>
                             <li>
-                                <a href="city.html" class="waves-effect waves-light">City</a>
+                                <a href="city.html" class="waves-effect waves-light">المدينة</a>
                             </li>
                             <li>
-                                <a href="destination.html" class="waves-effect waves-light">Destinations</a>
+                                <a href="destination.html" class="waves-effect waves-light">الأماكن</a>
                             </li>
                             <li>
-                                <a href="trip.html" class="waves-effect waves-light">Trip</a>
+                                <a href="trip.html" class="waves-effect waves-light">الرحلة</a>
                             </li>
                             <li>
-                                <a href="bus.html" class="waves-effect waves-light">Bus</a>
+                                <a href="bus.html" class="waves-effect waves-light">الحافلة</a>
                             </li>
                         </ul>
                     </div>
                 </li>
-                <li class="teal lighten-2">
-                    <a class="collapsible-header waves-effect active white-text">Reports
-                        <i class="glyphicon glyphicon-menu-down right white-text"></i>
+                <li class="teal lighten-1">
+                    <a class="collapsible-header waves-effect active white-text">تقارير
+                        <i class="glyphicon glyphicon-menu-down left white-text"></i>
                     </a>
                     <div class="collapsible-body">
                         <ul class="orange lighten-5">
                             <li>
-                                <a href="booking.html" class="waves-effect waves-light">Bookings</a>
+                                <a href="booking.html" class="waves-effect waves-light">الحجوزات</a>
                             </li>
                             <li class="active">
-                                <a href="agencies_reports.html" class="waves-effect waves-light">Agencies</a>
+                                <a href="agencies_reports.html" class="waves-effect waves-light">وكالات</a>
                             </li>
                             <li>
-                                <a href="user.html" class="waves-effect waves-light">Users</a>
+                                <a href="user.html" class="waves-effect waves-light">المستخدمين</a>
                             </li>
                         </ul>
                     </div>
@@ -70,28 +91,25 @@
         <div class="workspace">
             <div class="mainCnt white">
                 <form action="">
-                    <div class="row">
-                        <div class="col s12 l6">
-                            <blockquote>
-                                <h4>Manage Agencies</h4>
-                            </blockquote>
-                        </div>
-                        <div class="input-field col s12 l6">
+                    <div class="row" style="margin:0;">
+                        <div dir="rtl" class="input-field col s12 l6">
                             <input type="search" name="" id="search" class="customSearch" onkeyup="searchFilter()"
                                 required>
                             <label for="search"><i class="material-icons">search</i></label>
-                            <i class="material-icons">close</i>
+                        </div>
+                        <div class="col s12 l6">
+                            <blockquote>
+                                <h4>إدارة الوكالات</h4>
+                            </blockquote>
                         </div>
                     </div>
-                    <table id="table" class="highlight centered responsive-table bookingTable">
+                    <table dir="rtl" id="table" class="highlight centered responsive-table bookingTable">
                         <thead>
                             <tr>
-                                <th>No.</th>
-                                <th>Agency (en)</th>
-                                <th>Agency (ar)</th>
-                                <th>Owner (en)</th>
-                                <th>Owner (ar)</th>
-                                <th>Owner's Phone No.</th>
+                                <th>رقم</th>
+                                <th>وكالة</th>
+                                <th>مالك</th>
+                                <th>رقم هاتف المالك</th>
                                 <th colspan="2"></th>
                             </tr>
                         </thead>
@@ -99,12 +117,10 @@
                             <tr>
                                 <td>1</td>
                                 <td>Damer</td>
-                                <td>{remad}</td>
                                 <td>{Name here}</td>
-                                <td>{ereh eman}</td>
                                 <td>0912345678</td>
                                 <td>
-                                    <a href="">
+                                    <a href="agency_edit.html">
                                         <span class="glyphicon glyphicon-pencil green-text" aria-hidden="true"></span>
                                     </a>
                                 </td>
@@ -117,12 +133,10 @@
                             <tr>
                                 <td>2</td>
                                 <td>Adeela</td>
-                                <td>{remad}</td>
                                 <td>{Name here}</td>
-                                <td>{ereh eman}</td>
                                 <td>0912345678</td>
                                 <td>
-                                    <a href="">
+                                    <a href="agency_edit.html">
                                         <span class="glyphicon glyphicon-pencil green-text" aria-hidden="true"></span>
                                     </a>
                                 </td>
@@ -140,7 +154,7 @@
     </main>
 
     <footer class="page-footer a orange darken-1">
-        <div class="footer-copyright teal lighten-2">
+        <div class="footer-copyright teal lighten-1">
             <div class="container center">
                 Copyright © 2018, Siham_3M
             </div>

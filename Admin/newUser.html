@@ -7,9 +7,9 @@
     <link type="text/css" rel="stylesheet" href="assets/css/icons.css">
     <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css" media="screen,projection" />
     <link type="text/css" rel="stylesheet" href="assets/css/master.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bus</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Users</title>
 </head>
 
 <body>
@@ -24,7 +24,7 @@
         <ul id="slide-out" class="side-nav fixed borderNoShad teal lighten-2">
             <ul class="collapsible" data-collapisble="accordion">
                 <li class="teal lighten-2">
-                    <a class="collapsible-header active waves-effect white-text">Manage
+                    <a class="collapsible-header waves-effect white-text">Manage
                         <i class="glyphicon glyphicon-menu-down right white-text"></i>
                     </a>
                     <div class="collapsible-body">
@@ -41,14 +41,14 @@
                             <li>
                                 <a href="trip.html" class="waves-effect waves-light">Trip</a>
                             </li>
-                            <li class="active">
+                            <li>
                                 <a href="bus.html" class="waves-effect waves-light">Bus</a>
                             </li>
                         </ul>
                     </div>
                 </li>
                 <li class="teal lighten-2">
-                    <a class="collapsible-header waves-effect white-text">Reports
+                    <a class="collapsible-header waves-effect active white-text">Reports
                         <i class="glyphicon glyphicon-menu-down right white-text"></i>
                     </a>
                     <div class="collapsible-body">
@@ -57,10 +57,13 @@
                                 <a href="booking.html" class="waves-effect waves-light">Bookings</a>
                             </li>
                             <li>
-                                <a href="agencies.html" class="waves-effect waves-light">Agencies</a>
+                                <a href="agencies_reports.html" class="waves-effect waves-light">Agencies</a>
                             </li>
                             <li>
                                 <a href="user.html" class="waves-effect waves-light">Users</a>
+                            </li>
+                            <li class="active">
+                                <a href="newUser.html" class="waves-effect waves-light">New User</a>
                             </li>
                         </ul>
                     </div>
@@ -72,35 +75,70 @@
                 <form action="">
                     <div class="row">
                         <div class="col s12" style="padding:0;">
-                            <div class="orange darken-1 white-text center" style="border-bottom: 1px solid black; padding: 10px;">
-                                <h4 style="margin:0;">Bus</h4>
+                            <div class="orange darken-1 center white-text" style="border-bottom: 1px solid black; padding: 10px;">
+                                <h4 style="margin:0;">New User</h4>
                             </div>
                         </div>
+
                         <div class="row">
-                            <div class="input-field col s12 l4">
+                            <div class="input-field col s12 l2">
                                 <select name="" id="">
-                                    <option value="" disabled selected>Choose Agency</option>
-                                    <option value="">1</option>
-                                    <option value="">1</option>
-                                    <option value="">1</option>
-                                    <option value="">1</option>
-                                    <option value="">1</option>
-                                    <option value="">1</option>
+                                    <option value="" selected disabled>Choose Type</option>
+                                    <option value="1">Admin</option>
+                                    <option value="2">Agency</option>
+                                    <option value="3">User</option>
                                 </select>
-                                <label>Agnecy</label>
+                                <label for="">Type</label>
                             </div>
-                            <div class="file-field input-field col s12 l4">
-                                <div class="btn">
-                                    <span>Bus Image</span>
-                                    <input type="file">
+                            <div class="input-field col s12 l10">
+                                <select name="" id="">
+                                    <option value="" selected disabled>Select Agency</option>
+                                    <option value="1">Agency 1</option>
+                                    <option value="2">Agency 2</option>
+                                    <option value="3">Agency 3</option>
+                                </select>
+                                <label for="">Agency</label>
+                            </div>
+
+                            <div class="row">
+                                <div class="input-field col s12 l4">
+                                    <input id="" type="text" class="validate">
+                                    <label for="usr_name">Username<i class="red-text">*</i></label>
                                 </div>
-                                <div class="file-path-wrapper">
-                                    <input class="file-path validate" type="text">
+                                <div class="input-field col s12 l4">
+                                    <input id="" type="text" class="validate">
+                                    <label for="f_name">First Name</label>
+                                </div>
+                                <div class="input-field col s12 l4">
+                                    <input id="" type="text" class="validate">
+                                    <label for="l_name">Last Name</label>
                                 </div>
                             </div>
-                            <div class="input-field col s12 l4">
-                                <input type="number" class="validate">
-                                <label for="busSeatNo">Bus Seat Number</label>
+                            <div class="row">
+                                <div class="col s12 l1"></div>
+                                <div class="input-field col s12 l5">
+                                    <input id="" type="number" class="validate">
+                                    <label for="usr_phone">Phone Number<i class="red-text">*</i></label>
+                                </div>
+                                <div class="input-field col s12 l5">
+                                    <input id="" type="email" class="validate">
+                                    <label for="usr_email">E-mail</label>
+                                </div>
+                            </div>
+                            <div class="col s12 l1"></div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 l1">
+                            </div>
+                            <div class="input-field col s12 l5">
+                                <input id="" type="password" class="validate">
+                                <label for="password">Password <i class="red-text">*</i></label>
+                            </div>
+                            <div class="input-field col s12 l5">
+                                <input id="" type="password" class="validate">
+                                <label for="con_password">Confirm Password</label>
+                            </div>
+                            <div class="input-field col s12 l1">
                             </div>
                         </div>
                         <div class="row">
