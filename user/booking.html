@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Account</title>
+    <title>Bookings</title>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
@@ -22,7 +22,7 @@
     <nav class="vis-on-med">
         <div class="nav-wrapper teal lighten-1">
             <a href="#" data-target="slide-out" class="sidenav-trigger left"><i class="material-icons">menu</i></a>
-            <a href="#" class="brand-logo center">Account</a>
+            <a href="#" class="brand-logo center">Bookings</a>
         </div>
     </nav>
 
@@ -40,9 +40,10 @@
             </div>
         </li>
         <li><a class="waves-effect" href="home.html"><i class="material-icons teal-text">home</i> Home</a></li>
-        <li class="active"><a class="waves-effect" href="account.html"><i class="material-icons teal-text">account_box</i>
+        <li><a class="waves-effect" href="account.html"><i class="material-icons teal-text">account_box</i>
                 Account</a></li>
-        <li><a class="waves-effect" href="booking.html"><i class="material-icons teal-text">book</i> Bookings</a></li>
+        <li class="active"><a class="waves-effect" href="booking.html"><i class="material-icons teal-text">book</i>
+                Bookings</a></li>
         <li><a class="waves-effect" href="transaction.html"><i class="material-icons teal-text">swap_horiz</i>
                 Transaction</a></li>
         <li><a class="waves-effect" href="salespoints.html"><i class="material-icons teal-text">place</i> Salespoints</a></li>
@@ -61,43 +62,14 @@
         <div class="row no-padding">
             <div class="center hide-on-med-and-down">
                 <a class="btn-floating waves-effect waves-light left pulse red accent-1" onclick="goBack()"><i class="material-icons">arrow_back</i></a>
-                <h5>Account Settings</h5>
+                <h5>Choose Date</h5>
             </div>
         </div>
         <div class="workspace">
             <form action="">
                 <div class="row">
-                    <div class="input-field col s12 l4">
-                        <input type="text" id="name" value="Mufasa">
-                        <label for="name">Name</label>
-                    </div>
-                    <div class="input-field col s12 l4">
-                        <input type="text" name="" value="100110" id="gender" readonly>
-                        <label for="gender">Gender</label>
-                    </div>
-                    <div class="input-field col s12 l4">
-                        <input type="number" name="" id="phone_no">
-                        <label for="phone_no">Phone</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12 l4">
-                        <input type="email" name="" id="email">
-                        <label for="email">Email</label>
-                    </div>
-                    <div class="input-field col s12 l4">
-                        <input type="password" name="" id="password">
-                        <label for="password">Passoword</label>
-                    </div>
-                    <div class="input-field col s12 l4">
-                        <input type="password" name="" id="con_password">
-                        <label for="con_password">Confirm Password</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12 l12">
-                        <button style="width: 100%;" class="btn waves-effect waves-light" type="submit" name="action">Confirm
-                        </button>
+                    <div class="col s12 12 center">
+                        <a href="myBookings.html" class="btn waves-effect waves-light teal" style="width: 80%;">Date</a>
                     </div>
                 </div>
             </form>

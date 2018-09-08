@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Trip Details</title>
+    <title>History Record</title>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
@@ -22,7 +22,7 @@
     <nav class="vis-on-med">
         <div class="nav-wrapper teal lighten-1">
             <a onclick="goBack()" class="sidenav-trigger left"><i class="material-icons">arrow_back</i></a>
-            <a href="#" class="brand-logo center">Trip Details</a>
+            <a href="#" class="brand-logo center">History Record</a>
         </div>
     </nav>
 
@@ -41,7 +41,7 @@
         </li>
         <li><a class="waves-effect" href="home.html"><i class="material-icons teal-text">home</i> Home</a></li>
         <li><a class="waves-effect" href="#!"><i class="material-icons teal-text">account_box</i> Account</a></li>
-        <li><a class="waves-effect" href="#!"><i class="material-icons teal-text">book</i> Bookings</a></li>
+        <li class="active"><a class="waves-effect" href="#!"><i class="material-icons teal-text">book</i> Bookings</a></li>
         <li><a class="waves-effect" href="#!"><i class="material-icons teal-text">swap_horiz</i> Transaction</a></li>
         <li><a class="waves-effect" href="#!"><i class="material-icons teal-text">place</i> Salespoints</a></li>
         <li><a class="waves-effect" href="#!"><i class="material-icons teal-text">help</i> Help</a></li>
@@ -55,11 +55,12 @@
     </ul>
 
     <div class="page">
-        <div class="center hide-on-med-and-down">
-            <a class="btn-floating waves-effect waves-light left pulse red accent-1" onclick="goBack()"><i class="material-icons">arrow_back</i></a>
-            <h5>Trip Details</h5>
+        <div class="row no-margin">
+            <div class="row hide-on-med-and-down" style="padding:0;">
+                <a class="btn-floating waves-effect waves-light left pulse red accent-1" onclick="goBack()"><i class="material-icons">arrow_back</i></a>
+            </div>
         </div>
-        <div class="workspace">
+        <div class="workspace z-depth-5">
             <form action="">
                 <table class="centered highlight responsive">
                     <thead>
@@ -79,6 +80,10 @@
                             <td>Cairo</td>
                         </tr>
                         <tr>
+                            <td>Date</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
                             <td>Time</td>
                             <td>04:30:00</td>
                         </tr>
@@ -87,50 +92,38 @@
                             <td>Al Damar new</td>
                         </tr>
                         <tr>
-                            <td>Bus</td>
-                            <td>Al Damar</td>
-                        </tr>
-                        <tr>
                             <td>Bus No.</td>
                             <td>3</td>
-                        </tr>
-                        <tr>
-                            <td>Seat Price</td>
-                            <td>955</td>
                         </tr>
                         <tr>
                             <td>Seat No</td>
                             <td>4 , 8</td>
                         </tr>
                         <tr>
-                            <td>Total</td>
+                            <td>Price</td>
                             <td>1910</td>
+                        </tr>
+                        <tr>
+                            <td>Booking No.</td>
+                            <td>1910</td>
+                        </tr>
+                        <tr>
+                            <td>TicketNo</td>
+                            <td>7</td>
                         </tr>
                     </tbody>
                 </table>
-                <div class="row no-margin red lighten-5">
-                    <div class="input-field col s12 l6">
-                        <input type="text" name="" id="pass_name" required>
-                        <label for="pass_name">Passenger Name</label>
-                    </div>
-                    <div class="input-field col s12 l6">
-                        <input type="number" name="" id="pass_no" required>
-                        <label for="pass_no">Passenger Number</label>
-                    </div>
-                </div>
                 <div class="row no-margin">
                     <div class="col s2 l2"></div>
-                    <div class="input-field col s8 l8"> <button style="width: 100%;" class="btn waves-effect waves-light"
-                            type="submit" name="action">Proceed
+                    <div class="input-field col s8 l8"> <button style="width: 100%;" class="btn waves-effect waves-light pulse red"
+                            type="submit" name="action">Remove
                         </button></div>
                     <div class="col s2 l2"></div>
-                </div>
-                <div class="col s12 center l12">
-                    <p><a href="payment.html">NEXT</a></p>
                 </div>
             </form>
         </div>
     </div>
+
 
 
     <!-- Import Jquery -->
