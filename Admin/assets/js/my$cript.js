@@ -14,6 +14,7 @@ $(document).ready(function () {
   $("select").material_select();
 });
 
+// Initializes Tooltip 
 $(document).ready(function () {
   $(".tooltipped").tooltip({
     delay: 50
@@ -43,3 +44,24 @@ $('.datepicker').pickadate({
   close: 'Ok',
   closeOnSelect: false // Close upon selecting a date,
 });
+
+// Booking Search Table
+function searchFilter() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("search");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("table");
+  tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+
+//

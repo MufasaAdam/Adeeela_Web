@@ -1,10 +1,5 @@
-html {
-  padding: 0;
-  margin: 0;
-}
-
 body {
-  background-color: #fefefe;
+  background-color: #ebebeb;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -14,11 +9,10 @@ main {
   flex: 1 0 auto;
 }
 
-/*======================================
-            Login Page / Admin
-=======================================*/
-
-.header h1 {
+/*=======================
+--------Login Page-------
+ =======================*/
+/* .header h1 {
   margin: 0;
 }
 
@@ -31,194 +25,35 @@ main {
 
 .footer p {
   margin: 0;
+} */
+.login-box {
+  box-shadow: 0px 0px 1px #000;
+  background-color: rgba(255, 255, 255, 0.719);
+  border-radius: 10px;
+  width: 100%;
+  margin: auto;
+  z-index: 1;
+  
 }
 
-.login-box {
-  background-color: rgba(255, 255, 255, 0.58);
-  border: 1px solid #ee6e73;
-  border-radius: 10px;
-  position: relative;
-  margin-top: 14.5%;
-  left: 30%;
+.login-space {
+  position: absolute;
+  margin: auto;
+  top: 0px;
+  right: 0;
+  bottom: 0;
+  left: 0;
   width: 40%;
-  z-index: 1;
+  height: 40%;
+  background-image: url("../img/logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .btn.lgn {
   width: 100%;
   background-color: rgb(93, 64, 55);
-}
-
-div.svg1 {
-  z-index: 0;
-}
-
-svg {
-  z-index: 0;
-  position: absolute;
-  transform: translateY(-385px);
-  margin-left: 41.25%;
-  width: 17.5%;
-}
-
-path.first {
-  stroke-dasharray: 2000;
-  stroke-dashoffset: 500;
-  animation-name: leaf1, fill1;
-  animation-duration: 2s, 2s;
-  stroke-opacity: 1;
-  fill: url(#firstLeaf);
-  fill-opacity: 0;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in;
-  animation-delay: 0s, 0s;
-}
-
-@keyframes fill1 {
-  from {
-    fill-opacity: 0;
-  }
-  to {
-    fill-opacity: 1;
-  }
-}
-
-@keyframes leaf1 {
-  from {
-    stroke-opacity: 1;
-    stroke-dashoffset: 2000;
-  }
-  to {
-    stroke-opacity: 0;
-  }
-}
-
-path.second {
-  stroke-dasharray: 2000;
-  stroke-dashoffset: 500;
-  fill: url(#secondLeaf);
-  fill-opacity: 0;
-  animation-name: leaf2, fill2;
-  animation-duration: 2s, 2s;
-  stroke-opacity: 1;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in;
-  animation-delay: 0s, 0s;
-}
-
-@keyframes fill2 {
-  from {
-    fill-opacity: 0;
-  }
-  to {
-    fill-opacity: 1;
-  }
-}
-
-@keyframes leaf2 {
-  from {
-    stroke-opacity: 1;
-    stroke-dashoffset: 2000;
-  }
-  to {
-    stroke-opacity: 0;
-  }
-}
-
-path.third {
-  stroke-dasharray: 2000;
-  stroke-dashoffset: 500;
-  fill: url(#thirdLeaf);
-  fill-opacity: 0;
-  animation-name: leaf3, fill3;
-  animation-duration: 2s, 2s;
-  stroke-opacity: 1;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in;
-  animation-delay: 0s, 0s;
-}
-
-@keyframes fill3 {
-  from {
-    fill-opacity: 0;
-  }
-  to {
-    fill-opacity: 1;
-  }
-}
-
-@keyframes leaf3 {
-  from {
-    stroke-opacity: 1;
-    stroke-dashoffset: 2000;
-  }
-  to {
-    stroke-opacity: 0;
-  }
-}
-
-path.fourth {
-  stroke-dasharray: 2000;
-  stroke-dashoffset: 500;
-  fill: url(#fourthLeaf);
-  fill-opacity: 0;
-  animation-name: leaf4, fill4;
-  animation-duration: 2s, 2s;
-  stroke-opacity: 1;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in;
-  animation-delay: 0s, 0s;
-}
-
-@keyframes fill4 {
-  from {
-    fill-opacity: 0;
-  }
-  to {
-    fill-opacity: 1;
-  }
-}
-
-@keyframes leaf4 {
-  from {
-    stroke-opacity: 1;
-    stroke-dashoffset: 2000;
-  }
-  to {
-    stroke-opacity: 0;
-  }
-}
-
-path.fifth {
-  stroke-dasharray: 2000;
-  stroke-dashoffset: 500;
-  fill: url(#fifthLeaf);
-  fill-opacity: 0;
-  animation-name: leaf5, fill5;
-  animation-duration: 2s, 2s;
-  stroke-opacity: 1;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in;
-  animation-delay: 0s, s;
-}
-
-@keyframes fill5 {
-  from {
-    fill-opacity: 0;
-  }
-  to {
-    fill-opacity: 1;
-  }
-}
-
-@keyframes leaf5 {
-  from {
-    stroke-opacity: 1;
-    stroke-dashoffset: 2000;
-  }
-  to {
-    stroke-opacity: 0;
-  }
 }
 
 /*==========================================
@@ -240,7 +75,7 @@ path.fifth {
 .borderNoShad {
   box-shadow: none;
   -webkit-box-shadow: none;
-  border-right: 1px solid black;
+  box-shadow: 0px 0px 1px black;
 }
 
 .side-nav li > a:hover {
@@ -251,27 +86,27 @@ path.fifth {
 nav {
   position: fixed;
   z-index: 999 !important;
-  height: 56px;
+  height: 49px;
 }
 
 .nav-wrapper {
-  height: 56px !important;
-  border-bottom: 1px solid black;
+  height: 49px !important;
+  box-shadow: 0px 0px 0.5px #000; 
 }
 
 .page-footer.a {
-  margin-left: 200px;
-  width: calc(100% - 200px);
+  margin-left: 300px;
+  width: calc(100% - 300px);
 }
 
 .workspace {
   padding: 10px 30px;
   position: static;
   margin-top: 61px;
-  margin-left: 200px;
+  margin-left: 300px;
   height: 100%;
   /*border: 1px solid black;*/
-  width: calc(100% - 200px);
+width: calc(100% - 300px);
 }
 
 a.brand-logo.center {
@@ -279,152 +114,65 @@ a.brand-logo.center {
 }
 
 .mainCnt {
-  border: .5px solid black;
+  /* border: .5px solid black; */
   margin-bottom: 25px;
-  border-radius: 3px; 
-}
-
-.form_header {
-  padding: 10px;
-  border-bottom: 1px solid black;
-  background-color: #dd4a35;
-}
-
-.myBtn {
-  font-size: 8px;
-}
-
-.timeTable {
-  margin: 2% 0%;
-  border: 1px solid black;
-}
-
-.TT_header {
-  background: #dd4a35;
-  border-bottom: 1px solid black;
-  padding: 10px;
-}
-
-.tablePadding {
-  width: 97%;
-  margin: auto;
-  padding-bottom: 35px;
-}
-
-p.form_headerTxt {
-  margin: 0;
-  color: #fff;
-  text-shadow: 0 0 1px #111;
-  font-weight: bolder;
-  font-size: 1.05em;
-}
-
-.logo {
-  width: 250px;
-  line-height: 80px;
-}
-
-.ott_logo {
-  width: 120px;
-  height: 90px;
-  padding-left: 30px;
-}
-
-.timeSched tr td:nth-child(1) {
-  width: 100px;
-  background-color: #cccccc;
-  border-radius: 0;
-  border: 1px solid #fff;
-  margin: 0;
-  font-weight: bold;
-}
-
-.timeSched th {
-  background-color: #cccccc;
-  border-radius: 0;
-  border: 1px solid #fff;
-}
-
-.timeSched tr td {
-  border-bottom: 1px solid #999;
-  border-right: 1px solid #999;
-}
-
-/* Divider */
-
-div.divider {
-  width: 100px;
-  height: 50px;
-  background-color: #cccccc;
-  position: relative;
-  margin: 0%;
-}
-
-div.divider:after {
-  top: 0;
-  left: 0;
-  content: "";
-  position: absolute;
-  border-top: 1px solid #dd4a35;
-  width: 112px;
-  transform: rotate(26.5deg);
-  transform-origin: 0% 0%;
-}
-
-div.divider div {
-  display: inline-block;
-  /*   border: 1px solid black; */
-}
-
-.day {
-  float: left;
-  position: relative;
-  left: 12px;
-  font-size: 18px;
-  /* transform: rotate(26.5deg); */
-}
-
-.time {
-  padding: 0;
-  font-size: 18px;
-  right: 10px;
-  top: -15px;
-  position: relative;
-  float: right;
-  /* transform: rotate(26.5deg) */
-}
-
-@media only screen and (max-width: 600px) {
-  #logo {
-    visibility: hidden;
-  }
+  box-shadow: 0px 0px 1px #666;
+  border-radius: 3px;
 }
 
 /* Screen with the size of 992px */
-
 @media only screen and (max-width: 992px) {
   .page-footer.a {
     margin: 0;
     width: 100%;
   }
+
   .workspace {
     width: 100%;
     margin-left: 0;
   }
-  .side-nav {
-    height: 100%;
-  }
-  #logo {
-    margin-left: 2%;
-  }
+}
+
+.side-nav {
+  height: 100%;
+}
+
+#logo {
+  margin-left: 2%;
+}
 }
 
 @media only screen and (max-width: 728px) {
   div.row.col.s12.pt1 .input-field.col.s4 {
     width: 100%;
   }
+
   div.row.col.s12.pt2 .input-field.col {
     width: 100%;
   }
 }
 
+.bookingTable {
+  border-collapse: collapse;
+}
+
+.bookingTable thead tr {
+  background: #b2dfdb;
+  border-spacing: 0;
+}
+
+.bookingTable tbody tr td:nth-child(1) {
+  background: #b2dfdb;
+}
+
+.bookingTable tbody tr {
+  padding: 0;
+}
+
+.customSearch {
+  margin: 0 !important;
+}
+
+.hidden {
+  visibility: hidden;
+}
