@@ -8,6 +8,7 @@
     <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css" media="screen,projection" />
     <link type="text/css" rel="stylesheet" href="assets/css/master.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Users</title>
 </head>
 
@@ -70,13 +71,19 @@
             <div class="mainCnt white">
                 <form action="">
                     <div class="row">
-                        <div class="col s12 l12">
+                        <div class="col s12 l6">
                             <blockquote>
                                 <h4>Manage Users</h4>
                             </blockquote>
                         </div>
+                        <div class="input-field col s12 l6">
+                            <input type="search" name="" id="search" class="customSearch" onkeyup="searchFilter()"
+                                required>
+                            <label for="search"><i class="material-icons">search</i></label>
+                            <i class="material-icons">close</i>
+                        </div>
                     </div>
-                    <table class="highlight centered responsive-table bookingTable">
+                    <table id="table" class="highlight centered responsive-table bookingTable">
                         <thead>
                             <tr>
                                 <th>No.</th>
@@ -102,7 +109,7 @@
                                 <td> - </td>
                                 <td>Admin</td>
                                 <td>
-                                    <a href="">
+                                    <a href="editUser.html">
                                         <span class="glyphicon glyphicon-pencil green-text" aria-hidden="true"></span>
                                     </a>
                                 </td>
@@ -114,7 +121,7 @@
                             </tr>
                             <tr>
                                 <td>2</td>
-                                <td>Mufasa</td>
+                                <td>Getto Romio</td>
                                 <td>09????????</td>
                                 <td>MD5_mF%@(f</td>
                                 <td>Mustafa</td>
@@ -122,7 +129,7 @@
                                 <td> - </td>
                                 <td>Admin</td>
                                 <td>
-                                    <a href="">
+                                    <a href="editUser.html">
                                         <span class="glyphicon glyphicon-pencil green-text" aria-hidden="true"></span>
                                     </a>
                                 </td>
@@ -135,6 +142,12 @@
                         </tbody>
                     </table>
                 </form>
+            </div>
+            <div class="row">
+                <div>
+                    <a class="btn-floating btn-large waves-effect waves-light tooltipped teal right" data-position="left"
+                        data-delay="50" data-tooltip="Add new User" href="newUser.html"><i class="material-icons">add</i></a>
+                </div>
             </div>
         </div>
     </main>

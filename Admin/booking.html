@@ -7,6 +7,7 @@
     <link type="text/css" rel="stylesheet" href="assets/css/icons.css">
     <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css" media="screen,projection" />
     <link type="text/css" rel="stylesheet" href="assets/css/master.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bookings</title>
 </head>
@@ -69,14 +70,20 @@
         <div class="workspace">
             <div class="mainCnt white">
                 <form action="">
-                    <div class="row">
-                        <div class="col s12 l12">
+                    <div class="row" style="margin:0;">
+                        <div class="col s12 l6">
                             <blockquote>
                                 <h4>Customer's Booking Info</h4>
                             </blockquote>
                         </div>
+                        <div class="input-field col s12 l6">
+                            <input type="search" name="" id="search" class="customSearch" onkeyup="searchFilter()"
+                                required>
+                            <label for="search"><i class="material-icons">search</i></label>
+                            <i class="material-icons">close</i>
+                        </div>
                     </div>
-                    <table class="highlight centered responsive-table bookingTable">
+                    <table id="table" class="highlight centered responsive-table bookingTable">
                         <thead>
                             <tr>
                                 <th>No.</th>
@@ -89,7 +96,7 @@
                         <tbody>
                             <tr>
                                 <td>1</td>
-                                <td>Ahmed Mohammed</td>
+                                <td>Ahmed</td>
                                 <td>0912345678</td>
                                 <td>Khartoum - Attbara</td>
                                 <td>30/8/2018</td>
@@ -97,6 +104,27 @@
                             <tr>
                                 <td>2</td>
                                 <td>Mohammed</td>
+                                <td>0987654321</td>
+                                <td>Khartoum - Port Sudan</td>
+                                <td>1/9/2018</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Khalid</td>
+                                <td>0987654321</td>
+                                <td>Khartoum - Port Sudan</td>
+                                <td>1/9/2018</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Sammy</td>
+                                <td>0987654321</td>
+                                <td>Khartoum - Port Sudan</td>
+                                <td>1/9/2018</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Malaz</td>
                                 <td>0987654321</td>
                                 <td>Khartoum - Port Sudan</td>
                                 <td>1/9/2018</td>

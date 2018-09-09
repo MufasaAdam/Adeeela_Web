@@ -1,0 +1,22 @@
+Observation {
+    //Phone Number required [Starts with the postal code *+249*]
+    //
+}
+
+
+Special trip:
+1 - Different types of buses {
+    49 Seat Bus
+    14 Seat Bus
+    11 Seat Bus
+    4 Seats (car)
+}
+
+2 - Types of Trips {
+    educational,
+    Tourisim,
+    Private,
+    Special Needs,
+}
+
+3 -  

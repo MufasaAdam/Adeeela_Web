@@ -4099,8 +4099,8 @@ nav [class*="mdi-"],
 nav i.material-icons {
   display: block;
   font-size: 24px;
-  height: 56px;
-  line-height: 90px
+  height: 49px;
+  line-height: 49px
 }
 
 nav .nav-wrapper {
@@ -4124,8 +4124,8 @@ nav .button-collapse {
 }
 
 nav .button-collapse i {
-  height: 56px;
-  line-height: 56px
+  height: 49px;
+  line-height: 49px
 }
 
 nav .brand-logo {
@@ -4295,8 +4295,8 @@ nav .input-field label.active i {
   nav .nav-wrapper i,
   nav a.button-collapse,
   nav a.button-collapse i {
-    height: 64px;
-    line-height: 60px
+    height: 49px;
+    line-height: 49px
   }
   .navbar-fixed {
     height: 64px
@@ -5392,7 +5392,7 @@ button.btn-floating {
 .dropdown-content li>a,
 .dropdown-content li>span {
   font-size: 16px;
-  color: #752b08;
+  color: #004d40;
   display: block;
   line-height: 22px;
   padding: 14px 16px
@@ -5723,7 +5723,7 @@ button.btn-floating {
 
 .side-nav .collapsible-body li a,
 .side-nav.fixed .collapsible-body li a {
-  padding: 0 23.5px 0 20px
+  padding: 0 23.5px 0 35px
 }
 
 .collapsible.popout {
@@ -6018,9 +6018,9 @@ input[type=tel]:not(.browser-default):focus:not([readonly]),
 input[type=number]:not(.browser-default):focus:not([readonly]),
 input[type=search]:not(.browser-default):focus:not([readonly]),
 textarea.materialize-textarea:focus:not([readonly]) {
-  border-bottom: 1px solid #e3c319;
-  -webkit-box-shadow: 0 1px 0 0 #e3c319;
-  box-shadow: 0 1px 0 0 #e3c319
+  border-bottom: 1px solid #4db6ac;
+  -webkit-box-shadow: 0 1px 0 0 #4db6ac;
+  box-shadow: 0 1px 0 0 #4db6ac
 }
 
 input:not([type]):focus:not([readonly])+label,
@@ -6036,7 +6036,7 @@ input[type=tel]:not(.browser-default):focus:not([readonly])+label,
 input[type=number]:not(.browser-default):focus:not([readonly])+label,
 input[type=search]:not(.browser-default):focus:not([readonly])+label,
 textarea.materialize-textarea:focus:not([readonly])+label {
-  color: #e3c319
+  color: #004d40
 }
 
 input:not([type]).validate+label,
@@ -6295,7 +6295,7 @@ textarea.materialize-textarea+label:after,
 }
 
 .input-field label {
-  color: #000000;
+  color: grey;
   position: absolute;
   top: 0;
   left: 0;
@@ -7250,7 +7250,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 .side-nav {
   position: fixed;
-  width: 200px;
+  width: 300px;
   left: 0;
   bottom: 0;
   margin: 0;

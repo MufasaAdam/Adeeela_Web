@@ -7,6 +7,7 @@
     <link type="text/css" rel="stylesheet" href="assets/css/icons.css">
     <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css" media="screen,projection" />
     <link type="text/css" rel="stylesheet" href="assets/css/master.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Agencies</title>
 </head>
@@ -70,13 +71,19 @@
             <div class="mainCnt white">
                 <form action="">
                     <div class="row">
-                        <div class="col s12 l12">
+                        <div class="col s12 l6">
                             <blockquote>
                                 <h4>Manage Agencies</h4>
                             </blockquote>
                         </div>
+                        <div class="input-field col s12 l6">
+                            <input type="search" name="" id="search" class="customSearch" onkeyup="searchFilter()"
+                                required>
+                            <label for="search"><i class="material-icons">search</i></label>
+                            <i class="material-icons">close</i>
+                        </div>
                     </div>
-                    <table class="highlight centered responsive-table bookingTable">
+                    <table id="table" class="highlight centered responsive-table bookingTable">
                         <thead>
                             <tr>
                                 <th>No.</th>
@@ -109,7 +116,7 @@
                             </tr>
                             <tr>
                                 <td>2</td>
-                                <td>Damer</td>
+                                <td>Adeela</td>
                                 <td>{remad}</td>
                                 <td>{Name here}</td>
                                 <td>{ereh eman}</td>
