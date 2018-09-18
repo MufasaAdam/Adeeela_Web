@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>تفاصيل الرحلة</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" media="screen" href="assets/css/materialize.min.css">
+    <!-- Custom Css -->
+    <link rel="stylesheet" media="screen" href="assets/css/master.css">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar-fixed vis-on-med">
+        <nav class="vis-on-med">
+            <div class="nav-wrapper teal lighten-1">
+                <a onclick="goBack()" class="sidenav-trigger left"><i class="material-icons">arrow_back</i></a>
+                <a href="#" class="brand-logo center">تفاصيل الرحلة</a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Side Nav -->
+    <ul id="slide-out" class="sidenav right-aligned sidenav-fixed">
+        <li>
+            <div class="user-view teal lighten-2 center">
+                <div class="background">
+                    <img src="assets/img/road.jpg">
+                </div>
+                <a href="#user"><img class="circle auto-margin" src="assets/img/admin.jpg"></a>
+                <a href="#name"><span class="white-text name">Mustafa
+                        Adam</span></a>
+                <a href="#email"><span class="white-text email">mustafa@gmail.com</span></a>
+            </div>
+        </li>
+        <li><a class="waves-effect" href="home.html"><i class="material-icons teal-text">home</i> الصفحة
+                الرئيسية
+            </a></li>
+        <li><a class="waves-effect" href="account.html"><i class="material-icons teal-text">account_box</i> الحساب</a></li>
+        <li><a class="waves-effect" href="booking.html"><i class="material-icons teal-text">book</i> حجوزات </a></li>
+        <li><a class="waves-effect" href="transaction.html"><i class="material-icons teal-text">swap_horiz</i>
+                عمليات</a></li>
+        <li><a class="waves-effect" href="salespoints.html"><i class="material-icons teal-text">place</i> نقاط البيع
+            </a></li>
+        <li><a class="waves-effect" href="help.html"><i class="material-icons teal-text">help</i> مساعدة</a></li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a class="waves-effect" href="about.html"><i class="material-icons teal-text">info</i>معلوماتنا
+            </a></li>
+        <li><a class="waves-effect" href="contact_us.html"><i class="material-icons teal-text">phone</i>تصل إلينا</a></li>
+        <li><a class="waves-effect" href="../home.html"><i class="material-icons teal-text">translate</i>غير اللغة</a></li>
+        <li><a class="waves-effect" href="index.html"><i class="material-icons teal-text">power_settings_new</i>الخروج</a></li>
+    </ul>
+
+    <div class="page">
+        <div class="center hide-on-med-and-down">
+            <a class="btn-floating waves-effect waves-light right pulse red accent-1" onclick="goBack()"><i class="material-icons">arrow_forward</i></a>
+            <h5>تفاصيل الرحلة</h5>
+        </div>
+        <div class="workspace">
+            <form action="">
+                <table class="centered highlight responsive" dir="rtl">
+                    <thead>
+                        <tr>
+                            <th>التفاصيل</th>
+                            <th>القيمة</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>من </td>
+                            <td>Khartoum</td>
+                        </tr>
+                        <tr>
+                            <td>إلى</td>
+                            <td>Cairo</td>
+                        </tr>
+                        <tr>
+                            <td>الوقت</td>
+                            <td>04:30:00</td>
+                        </tr>
+                        <tr>
+                            <td>وكالة</td>
+                            <td>Al Damar new</td>
+                        </tr>
+                        <tr>
+                            <td>الباص</td>
+                            <td>Al Damar</td>
+                        </tr>
+                        <tr>
+                            <td>رقم الباص</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>سعر المقعد</td>
+                            <td>955</td>
+                        </tr>
+                        <tr>
+                            <td>رقم المقعد</td>
+                            <td>4 , 8</td>
+                        </tr>
+                        <tr>
+                            <td>مجموع</td>
+                            <td>1910</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="row no-margin red lighten-5">
+                    <div class="input-field col s12 l6">
+                        <input type="text" name="" id="pass_name" required>
+                        <label for="pass_name">اسم الراكب</label>
+                    </div>
+                    <div class="input-field col s12 l6">
+                        <input type="number" name="" id="pass_no" required>
+                        <label for="pass_no">رقم الراكب</label>
+                    </div>
+                </div>
+                <div class="row no-margin">
+                    <div class="col s2 l2"></div>
+                    <div class="input-field col s8 l8"> <button style="width: 100%;" class="btn waves-effect waves-light"
+                            type="submit" name="action">التالى
+                        </button></div>
+                    <div class="col s2 l2"></div>
+                </div>
+                <div class="col s12 center l12">
+                    <p><a href="payment.html">NEXT</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Import Jquery -->
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <!-- Import Materialize JavaScrip -->
+    <script src="assets/js/materialize.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="assets/js/$cript.js"></script>
+</body>
+
+</html>

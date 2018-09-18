@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css?family=Cairo');
+html {
+    font-family: 'Cairo', sans-serif;
+}
+.no-margin {
+    margin: 0 !important;
+}
+
+.padding {
+    padding: 15px;
+}
+
+.auto-margin {
+    margin: auto
+}
+
+.login-page {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    padding-top: 8%;
+}
+
+.reg-page {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    padding-top: 2%;
+}
+
+.login-box {
+    position: relative;
+    width: 50%;
+    border-radius: 5px;
+    margin: auto;
+    box-shadow:  0 24px 38px 3px rgba(0, 0, 0, 0.14),
+                 0 9px 46px 8px rgba(0, 0, 0, 0.12),
+                 0 11px 15px -7px rgba(0, 0, 0, 0.2);
+}
+
+.reg-box {
+    width: 50%;
+    border-radius: 8px;
+    margin: auto;
+    box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14),
+                0 9px 46px 8px rgba(0, 0, 0, 0.12),
+                0 11px 15px -7px rgba(0, 0, 0, 0.2);
+}
+
+.vis-on-med {
+    display: none;
+}
+
+.page {
+    padding: 10px 30px;
+    position: static;
+    margin-top: 0px;
+    margin-right: 300px;
+    height: 100%;
+    /* border: 1px solid black; */
+    width: calc(100% - 300px);
+}
+
+.workspace {
+    border-radius: 8px;
+    background-color: #fefefe;
+    padding: 10px;
+    margin-top: 20px;
+    box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14),
+        0 9px 46px 8px rgba(0, 0, 0, 0.12),
+        0 11px 15px -7px rgba(0, 0, 0, 0.2);
+}
+
+.busSeat {
+    height: 60px;
+    width: 60px;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 0 !important;
+}
+
+.niDegree {
+    transform: rotate(90deg)
+}
+
+.tableHead {
+    background-color: #b2dfdb
+}
+
+.bordered td,
+.bordered th {
+    border: 1px solid #000;
+}
+
+.requestPage {
+    position: static;
+    margin-top: 0px;
+    margin-right: 300px;
+    height: 100%;
+    /* border: 1px solid black; */
+    width: calc(100% - 300px);
+}
+
+.requestTable tr td:nth-child(1) {
+    width: 50%;
+}
+
+.name {
+    text-shadow: 0px 0px 5px #000;
+}
+.email {
+    text-shadow: 0px 0px 5px #000;
+}
+@media only screen and (max-width: 992px) {
+    .login-box {
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: 100%;
+        box-shadow: none;
+        margin: auto
+    }
+
+    .reg-box {
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: 100%;
+        box-shadow: none;
+        margin: auto
+    }
+
+    .vis-on-med {
+        display: block;
+    }
+
+    .login-page {
+        padding-top: 2%;
+    }
+
+    .page {
+        padding: 0;
+        margin: auto;
+        margin-top: 0;
+        height: 100%;
+        /* border: 1px solid black; */
+        width: auto;
+    }
+
+    .requestPage {
+        margin-top: 0px;
+        margin: auto;
+        height: 100%;
+        /* border: 1px solid black; */
+        width: 100%;
+    }
+
+    .workspace {
+        background-color: #fefefe;
+        box-shadow: none;
+        margin-top: 0;
+        border-radius: 0;
+    }
+
+    .busSeat {
+        height: 40px;
+        width: 40px;
+        text-align: center;
+        padding: 0 !important;
+    }
+}
