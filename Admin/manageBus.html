@@ -1,0 +1,170 @@
+n
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" />
+    <link type="text/css" rel="stylesheet" href="assets/css/icons.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="assets/css/master.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <title>Adeela</title>
+</head>
+
+<body>
+    <main>
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="#!">one</a></li>
+            <li><a href="#!">two</a></li>
+            <li class="divider"></li>
+            <li><a href="#!">three</a></li>
+        </ul>
+        <nav>
+            <div class="nav-wrapper teal lighten-2">
+                <a href="#" data-activates="slide-out" class="button-collapse left">
+                    <i class="glyphicon glyphicon-menu-hamburger"></i>
+                    <ul class="right">
+                        <li><a class="dropdown-button waves-effect waves-light" href="#!" data-activates="dropdown1"><i
+                                    class="material-icons right" style="margin: 0;">settings</i></a></li>
+                    </ul>
+                </a>
+            </div>
+        </nav>
+        <ul id="slide-out" class="side-nav fixed borderNoShad teal lighten-2">
+            <ul class="collapsible" data-collapisble="accordion">
+                <li class="teal lighten-2">
+                    <a class="collapsible-header active waves-effect white-text">Manage
+                        <i class="glyphicon glyphicon-menu-down right white-text"></i>
+                    </a>
+                    <div class="collapsible-body">
+                        <ul class="orange lighten-5">
+                            <li>
+                                <a href="agency.html" class="waves-effect waves-light">Agency</a>
+                            </li>
+                            <li>
+                                <a href="city.html" class="waves-effect waves-light">City</a>
+                            </li>
+                            <li>
+                                <a href="destination.html" class="waves-effect waves-light">Destinations</a>
+                            </li>
+                            <li>
+                                <a href="trip.html" class="waves-effect waves-light">Trip</a>
+                            </li>
+                            <li>
+                                <a href="bus.html" class="waves-effect waves-light">Bus</a>
+                            </li>
+                            <li class="active">
+                                <a href="manageBus.html" class="waves-effect waves-light">Manage Seat</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="teal lighten-2">
+                    <a class="collapsible-header waves-effect white-text">Reports
+                        <i class="glyphicon glyphicon-menu-down right white-text"></i>
+                    </a>
+                    <div class="collapsible-body">
+                        <ul class="orange lighten-5">
+                            <li>
+                                <a href="booking.html" class="waves-effect waves-light">Bookings</a>
+                            </li>
+                            <li>
+                                <a href="agencies_reports.html" class="waves-effect waves-light">Agencies</a>
+                            </li>
+                            <li>
+                                <a href="user.html" class="waves-effect waves-light">Users</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </ul>
+        <div class="workspace">
+            <div class="mainCnt white">
+                <form action="">
+                    <div class="row">
+                        <div class="col s12" style="padding:0;">
+                            <div class="orange darken-1 white-text center" style="border-bottom: 1px solid black; padding: 10px;">
+                                <h4 style="margin:0;">Manage Seat</h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 l4">
+                                <select name="" id="">
+                                    <option value="" disabled selected>Select From</option>
+                                    <option value="">City A</option>
+                                    <option value="">City A</option>
+                                    <option value="">City A</option>
+                                    <option value="">City A</option>
+                                    <option value="">City A</option>
+                                    <option value="">City A</option>
+                                </select>
+                                <label>From</label>
+                            </div>
+                            <div class="input-field col s12 l4">
+                                <select name="" id="">
+                                    <option value="" disabled selected>Select To</option>
+                                    <option value="1">City B</option>
+                                    <option value="2">City B</option>
+                                    <option value="3">City B</option>
+                                    <option value="4">City B</option>
+                                    <option value="5">City B</option>
+                                    <option value="6">City B</option>
+                                    <option value="7">City B</option>
+                                </select>
+                                <label for="">To</label>
+                            </div>
+                            <div class="input-field col s12 l4">
+                                <input id="datepkr" type="date" class="datepicker">
+                                <label for="datepkr">Date</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s0 l1"></div>
+                            <div class="input-field col s12 l5">
+                                <select name="" id="">
+                                    <option value="" disabled selected>Choose Agency</option>
+                                    <option value="">1</option>
+                                    <option value="">1</option>
+                                    <option value="">1</option>
+                                    <option value="">1</option>
+                                    <option value="">1</option>
+                                    <option value="">1</option>
+                                </select>
+                                <label>Agnecy</label>
+                            </div>
+                            <div class="input-field col s12 l5">
+                                <input id="timepkr" type="text" class="timepicker">
+                                <label for="timepkr">Time</label>
+                            </div>
+                            <div class="col s0 l1"></div>
+                        </div>
+                        <div class="row">
+                            <div class="input-feild col s12 center">
+                                <a href="manageBusSeat.html" class="btn btn-larger waves-effect waves-light teal lighten-2"
+                                    style="width:80%;">Manage</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="page-footer a orange darken-1">
+        <div class="footer-copyright teal lighten-2">
+            <div class="container center">
+                Copyright © 2018, Siham_3M
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/materialize.min.js"></script>
+    <script type="text/javascript" src="assets/js/my$cript.js"></script>
+</body>
+
+</html>
