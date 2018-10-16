@@ -1,16 +1,51 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <link rel="icon" type="image/png" />
-    <link type="text/css" rel="stylesheet" href="assets/css/icons.css">
-    <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css" media="screen,projection" />
-    <link type="text/css" rel="stylesheet" href="assets/css/master.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bus</title>
-</head>
-
+<?php
+session_start();
+if(!isset($_SESSION['u_id']))
+{ header('location:index.php');}
+include('incloud/condb.php');
+if(isset($_POST['addbus'])){
+    $agency_id  =$_POST['agency_id'];	
+    $bus_set    =$_POST['bus_set'];						
+    date_default_timezone_set ("Africa/Cairo");
+    $date      =date("Y/m/d");
+    $time      =date("h:i");
+    //validation for attchment//
+    //end of the validation for file//
+    if(isset($_FILES['busimg']['name'])){
+        for($i=0; $i<count($_FILES['busimg']['name']); $i++)
+        {
+            $tmpFilePath = $_FILES['busimg']['tmp_name'][$i];
+            if ($tmpFilePath != ""){
+                $path = "bus_images/";
+                $name = $_FILES['busimg']['name'][$i];
+                $size = $_FILES['busimg']['size'][$i];
+                list($txt, $ext) = explode(".", $name);
+                $file= substr(str_replace(" ", "_", $txt), 0);
+                $info = pathinfo($file);
+                $filename = $file.".".$ext;
+                if(move_uploaded_file($_FILES['busimg']['tmp_name'][$i], $path.$filename))
+                {
+                    date_default_timezone_set ("Africa/Khartoum");
+                    $currentdate=date("d M Y");
+                    $file_name_all=$filename;
+                }
+            }
+        }//end of Loop//
+        $filepath = rtrim($file_name_all);
+    }else{
+        $filepath="Error";
+    }
+    $sql        ="INSERT INTO `buss`(`Agency_id`, `photo`, `bus_seat_num`) VALUES ('$agency_id','$filepath','$bus_set')";
+    if($mysqli->query($sql)===true){
+                    ?> <script>alert('<?php echo'Your bus has been added Succsesfuly';?>');</script><?php
+                                   }else{
+        echo"Error:".$sql."<br>".$mysqli->error;
+    }
+}
+?>
+  <?php 
+include('incloud/head.php');
+      ?>
 <body>
     <main>
         <nav>
@@ -20,55 +55,12 @@
                 </a>
             </div>
         </nav>
-        <ul id="slide-out" class="side-nav fixed borderNoShad teal lighten-2">
-            <ul class="collapsible" data-collapisble="accordion">
-                <li class="teal lighten-2">
-                    <a class="collapsible-header active waves-effect white-text">Manage
-                        <i class="glyphicon glyphicon-menu-down right white-text"></i>
-                    </a>
-                    <div class="collapsible-body">
-                        <ul class="orange lighten-5">
-                            <li>
-                                <a href="agency.php" class="waves-effect waves-light">Agency</a>
-                            </li>
-                            <li>
-                                <a href="city.php" class="waves-effect waves-light">City</a>
-                            </li>
-                            <li>
-                                <a href="destination.php" class="waves-effect waves-light">Destinations</a>
-                            </li>
-                            <li>
-                                <a href="trip.php" class="waves-effect waves-light">Trip</a>
-                            </li>
-                            <li class="active">
-                                <a href="bus.php" class="waves-effect waves-light">Bus</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="teal lighten-2">
-                    <a class="collapsible-header waves-effect white-text">Reports
-                        <i class="glyphicon glyphicon-menu-down right white-text"></i>
-                    </a>
-                    <div class="collapsible-body">
-                        <ul class="orange lighten-5">
-                            <li>
-                                <a href="booking.php" class="waves-effect waves-light">Bookings</a>
-                            </li>
-                            <li>
-                                <a href="agencies.php" class="waves-effect waves-light">Agencies</a>
-                            </li>
-                            <li>
-                                <a href="users.php" class="waves-effect waves-light">Users</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
-        </ul>
+        <?php 
+include('incloud/nav.php');
+      ?>
         <div class="workspace">
             <div class="mainCnt white">
-                <form action="">
+                <form action="bus.php" method="post" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col s12" style="padding:0;">
                             <div class="orange darken-1 white-text center" style="border-bottom: 1px solid black; padding: 10px;">
@@ -77,34 +69,40 @@
                         </div>
                         <div class="row">
                             <div class="input-field col s12 l4">
-                                <select name="" id="">
+                                <select name="agency_id" id="" required>
                                     <option value="" disabled selected>Choose Agency</option>
-                                    <option value="">1</option>
-                                    <option value="">1</option>
-                                    <option value="">1</option>
-                                    <option value="">1</option>
-                                    <option value="">1</option>
-                                    <option value="">1</option>
+                                    <?php
+                                 $sqls = "SELECT * FROM `agencies`";
+                                 $result = $mysqli->query($sqls);
+                                 if ($result->num_rows > 0) {
+                                     while($row = $result->fetch_assoc()){
+                                         ?>
+                                         <option value="<?php echo $row['agency_id'] ?>">
+                                         <?php echo $row['agency_name_english']; ?> </option>
+                                         <?php
+                                         }
+                                        }
+                                        ?>
                                 </select>
                                 <label>Agnecy</label>
                             </div>
                             <div class="file-field input-field col s12 l4">
-                                <div class="btn">
+                                <div class="btn orange darken-1">
                                     <span>Bus Image</span>
-                                    <input type="file">
+                                    <input type="file" name="busimg[]" required accept=".jpg,.png,.jpeg">
                                 </div>
                                 <div class="file-path-wrapper">
                                     <input class="file-path validate" type="text">
                                 </div>
                             </div>
                             <div class="input-field col s12 l4">
-                                <input type="number" class="validate">
+                                <input type="number" name="bus_set" class="validate">
                                 <label for="busSeatNo">Bus Seat Number</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-feild col s12 center">
-                                <button class="btn btn-larger waves-effect waves-light teal lighten-2" style="width:80%;">Add</button>
+                                <input type="submit" value="Add" name="addbus" class="btn btn-larger waves-effect waves-light orange darken-1" style="width:80%;">
                             </div>
                         </div>
                     </div>
@@ -121,9 +119,9 @@
         </div>
     </footer>
 
-    <script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="assets/js/materialize.min.js"></script>
-    <script type="text/javascript" src="assets/js/my$cript.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../assets/js/materialize.min.js"></script>
+    <script type="text/javascript" src="../assets/js/my$cript.js"></script>
 </body>
 
 </html>

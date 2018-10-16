@@ -1,16 +1,19 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <link rel="icon" type="image/png" />
-    <link type="text/css" rel="stylesheet" href="assets/css/icons.css">
-    <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css" media="screen,projection" />
-    <link type="text/css" rel="stylesheet" href="assets/css/master.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Agencies</title>
-</head>
-
+<?php
+session_start();
+if(!isset($_SESSION['u_id']))
+{ header('location:index.php');}
+include('incloud/condb.php');
+include('incloud/head.php');
+if(isset($_GET['agancyid'])){
+     $agancyid    =$_GET['agancyid'];
+     $sql         ="DELETE FROM `agencies` WHERE `agency_id`='$agancyid'";
+    if($mysqli->query($sql)===true){
+                 ?><script>alert('<?php echo'The Agancy Has Been Deleted';?>');</script><?php
+                                   }else{
+        echo"Error:".$sql."<br>".$mysqli->error;
+    }
+}
+?>
 <body>
     <main>
         <nav>
@@ -20,111 +23,64 @@
                 </a>
             </div>
         </nav>
-        <ul id="slide-out" class="side-nav fixed borderNoShad teal lighten-2">
-            <ul class="collapsible" data-collapisble="accordion">
-                <li class="teal lighten-2">
-                    <a class="collapsible-header waves-effect white-text">Manage
-                        <i class="glyphicon glyphicon-menu-down right white-text"></i>
-                    </a>
-                    <div class="collapsible-body">
-                        <ul class="orange lighten-5">
-                            <li>
-                                <a href="agency.php" class="waves-effect waves-light">Agency</a>
-                            </li>
-                            <li>
-                                <a href="city.php" class="waves-effect waves-light">City</a>
-                            </li>
-                            <li>
-                                <a href="destination.php" class="waves-effect waves-light">Destinations</a>
-                            </li>
-                            <li>
-                                <a href="trip.php" class="waves-effect waves-light">Trip</a>
-                            </li>
-                            <li>
-                                <a href="bus.php" class="waves-effect waves-light">Bus</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="teal lighten-2">
-                    <a class="collapsible-header waves-effect active white-text">Reports
-                        <i class="glyphicon glyphicon-menu-down right white-text"></i>
-                    </a>
-                    <div class="collapsible-body">
-                        <ul class="orange lighten-5">
-                            <li>
-                                <a href="booking.php" class="waves-effect waves-light">Bookings</a>
-                            </li>
-                            <li class="active">
-                                <a href="agencies_reports.php" class="waves-effect waves-light">Agencies</a>
-                            </li>
-                            <li>
-                                <a href="user.php" class="waves-effect waves-light">Users</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
-        </ul>
+        <?php 
+include('incloud/nav.php');
+      ?>
         <div class="workspace">
             <div class="mainCnt white">
                 <form action="">
                     <div class="row">
-                        <div class="col s12 l12">
+                        <div class="col s12 l6">
                             <blockquote>
                                 <h4>Manage Agencies</h4>
                             </blockquote>
                         </div>
+                        <div class="input-field col s12 l6">
+                            <input type="search" name="" id="search" class="customSearch" onkeyup="searchFilter()"
+                                required>
+                            <label for="search"><i class="material-icons">search</i></label>
+                            <i class="material-icons">close</i>
+                        </div>
                     </div>
-                    <table class="highlight centered responsive-table bookingTable">
+                    <table id="table" class="highlight centered responsive-table bookingTable">
                         <thead>
                             <tr>
-                                <th>No.</th>
+                               
                                 <th>Agency (en)</th>
                                 <th>Agency (ar)</th>
                                 <th>Owner (en)</th>
                                 <th>Owner (ar)</th>
                                 <th>Owner's Phone No.</th>
-                                <th colspan="2"></th>
+                                <th colspan="2">Action</th>
                             </tr>
                         </thead>
                         <tbody>
+                            <?php
+                                 $sqls = "SELECT * FROM `agencies`";
+                                 $result = $mysqli->query($sqls);
+                                 if ($result->num_rows > 0) {
+                                     while($row = $result->fetch_assoc()){           
+                            ?>
                             <tr>
-                                <td>1</td>
-                                <td>Damer</td>
-                                <td>{remad}</td>
-                                <td>{Name here}</td>
-                                <td>{ereh eman}</td>
-                                <td>0912345678</td>
-                                <td>
-                                    <a href="">
+                                
+                                <td><?php echo $row['agency_name_english'] ?></td>
+                                <td charset="utf-8"><?php echo $row['agency_name_arabic'] ?></td>
+                                <td><?php echo $row['owner'] ?></td>
+                                <td charset="utf-8"><?php echo $row['owner_ar'] ?></td>
+                                <td><?php echo $row['ownphone'] ?></td>
+                                <td colspan="2">
+                                    <a href="agency_edit.php?agncyid=<?php echo $row['agency_id'] ?>">
                                         <span class="glyphicon glyphicon-pencil green-text" aria-hidden="true"></span>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="">
+                                    </a>&nbsp;
+                                    <a href="agencies_reports.php?agancyid=<?php echo $row['agency_id'] ?>" onclick="confirm('are you sure?!');">
                                         <span class="glyphicon glyphicon-trash red-text" aria-hidden="true"></span>
                                     </a>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Damer</td>
-                                <td>{remad}</td>
-                                <td>{Name here}</td>
-                                <td>{ereh eman}</td>
-                                <td>0912345678</td>
-                                <td>
-                                    <a href="">
-                                        <span class="glyphicon glyphicon-pencil green-text" aria-hidden="true"></span>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="">
-                                        <span class="glyphicon glyphicon-trash red-text" aria-hidden="true"></span>
-                                    </a>
-                                </td>
-                            </tr>
+                            <?php
+                                     }
+                                 }
+                            ?>
                         </tbody>
                     </table>
                 </form>
@@ -140,9 +96,9 @@
         </div>
     </footer>
 
-    <script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="assets/js/materialize.min.js"></script>
-    <script type="text/javascript" src="assets/js/my$cript.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../assets/js/materialize.min.js"></script>
+    <script type="text/javascript" src="../assets/js/my$cript.js"></script>
 </body>
 
 </html>

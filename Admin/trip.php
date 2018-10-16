@@ -1,19 +1,26 @@
 <?php 
+session_start();
+if(!isset($_SESSION['u_id']))
+{ header('location:index.php');}
 include('incloud/condb.php');
+if(isset($_POST['addtrip'])){
+    $agencie_id      =$_POST['agencie_id'];
+    $timeu           =$_POST['timeu'];
+    $datepp          =$_POST['datepp'];
+    $bus_id          =$_POST['bus_id'];
+    $price           =$_POST['price'];
+    $did             =$_POST['did'];
+    $sql             ="INSERT INTO `trips`(`agency_id`, `time_id`,`trip_date`, `bus_id`, `trip_price`, `destination_id`) VALUES ('$agencie_id','$timeu','$datepp','$bus_id','$price','$did')";
+    if($mysqli->query($sql)===true){
+                               ?> <script>alert('<?php echo'Your Trips added Succsesfuly';?>');</script><?php
+    }else{
+        echo"Error:".$sql."<br>".$mysqli->error;
+    }
+}
 ?>	
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <link rel="icon" type="image/png" />
-    <link type="text/css" rel="stylesheet" href="assets/css/icons.css">
-    <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css" media="screen,projection" />
-    <link type="text/css" rel="stylesheet" href="assets/css/master.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Adeela</title>
-</head>
-
+<?php 
+include('incloud/head.php');
+      ?>
 <body>
     <main>
         <nav>
@@ -23,55 +30,12 @@ include('incloud/condb.php');
                 </a>
             </div>
         </nav>
-        <ul id="slide-out" class="side-nav fixed borderNoShad teal lighten-2">
-            <ul class="collapsible" data-collapisble="accordion">
-                <li class="teal lighten-2">
-                    <a class="collapsible-header active waves-effect">Manage
-                        <i class="glyphicon glyphicon-menu-down right white-text"></i>
-                    </a>
-                    <div class="collapsible-body">
-                        <ul class="orange lighten-5">
-                            <li>
-                                <a href="agency.php" class="waves-effect waves-light">Agency</a>
-                            </li>
-                            <li>
-                                <a href="city.php" class="waves-effect waves-light">City</a>
-                            </li>
-                            <li>
-                                <a href="destination.php" class="waves-effect waves-light">Destinations</a>
-                            </li>
-                            <li class="active">
-                                <a href="trip.php" class="waves-effect waves-light">Trip</a>
-                            </li>
-                            <li>
-                                <a href="bus.php" class="waves-effect waves-light">Bus</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="teal lighten-2">
-                    <a class="collapsible-header waves-effect white-text">Reports
-                        <i class="glyphicon glyphicon-menu-down right white-text"></i>
-                    </a>
-                    <div class="collapsible-body">
-                        <ul class="orange lighten-5">
-                            <li>
-                                <a href="booking.php" class="waves-effect waves-light">Bookings</a>
-                            </li>
-                            <li>
-                                <a href="agencies_reports.php" class="waves-effect waves-light">Agencies</a>
-                            </li>
-                            <li>
-                                <a href="user.php" class="waves-effect waves-light">Users</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
-        </ul>
+        <?php 
+include('incloud/nav.php');
+      ?>
         <div class="workspace">
             <div class="mainCnt white">
-                <form action="">
+                <form action="trip.php" method="post">
                     <div class="row">
                         <div class="col s12" style="padding:0;">
                             <div class="orange darken-1 white-text center" style="border-bottom: 1px solid black; padding: 10px;">
@@ -80,7 +44,7 @@ include('incloud/condb.php');
                         </div>
                         <div class="row">
                             <div class="input-field col s12 l4">
-                                <select name="" id="">
+                                <select name="agencie_id" id="">
                                     <option value="" disabled selected>Choose Agency</option>
                                     <?php
                                  $sqls = "SELECT * FROM `agencies`";
@@ -89,7 +53,7 @@ include('incloud/condb.php');
                                      while($row = $result->fetch_assoc()){
                                          ?>
                                          <option value="<?php echo $row['agency_id'] ?>">
-                                         <?php echo $row['agency_name_english']; ?> -- <?php echo $row['agency_name_arabic']; ?> </option>
+                                         <?php echo $row['agency_name_english']; ?></option>
                                          <?php
                                          }
                                         }
@@ -98,53 +62,46 @@ include('incloud/condb.php');
                                 <label>Agnecy</label>
                             </div>
                             <div class="input-field col s12 l4">
-                                <input id="timepkr" type="text" class="timepicker">
+                                <input id="timepkr" type="text"  name="timeu" class="timepicker">
                                 <label for="timepkr">Time</label>
                             </div>
-                            <div class="input-field col s12 l4">
-                                <select name="" id="">
-                                <?php
-                                 $sqls = "SELECT * FROM `days`";
+                            <div class="row">
+                                <div class="input-field col s12 l4">
+                                    <input id="datepkr" type="date" name="datepp" class="datepicker" required>
+                                    <label for="datepkr">Date</label>
+                                </div>
+                                <div class="input-field col s12 l4">
+                                    <select name="bus_id" id="">
+                                        <option value="" disabled selected>Select Bus</option>
+                                        <?php
+                                 $sqls = "SELECT * FROM `buss`";
                                  $result = $mysqli->query($sqls);
                                  if ($result->num_rows > 0) {
                                      while($row = $result->fetch_assoc()){
                                          ?>
-                                         <option value="<?php echo $row['day_id'] ?>">
-                                         <?php echo $row['day_english']; ?> -- <?php echo $row['day_arabic']; ?> </option>
+                                         <option value="<?php echo $row['bus_id'] ?>">
+                                         <?php echo $row['bus_seat_num']; ?> Seates</option>
                                          <?php
                                          }
                                         }
                                         ?>
-                                </select>
-                                <label for="">Day</label>
-                            </div>
-                            <div class="row">
-                                <div class="input-field col s12 l4">
-                                    <input id="datepkr" type="text" class="datepicker">
-                                    <label for="datepkr">Date</label>
-                                </div>
-                                <div class="input-field col s12 l4">
-                                    <select name="" id="">
-                                        <option value="" disabled selected>Select Bus</option>
-                                        <option value="1">Bus 1</option>
-                                        <option value="2">Bus 2</option>
                                     </select>
                                     <label for="">Bus</label>
                                 </div>
                                 <div class="input-field col s12 l4">
-                                    <input type="number" name="" id="">
+                                    <input type="number" name="price" id="">
                                     <label for="ticketPrice">Price</label>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="input-field col s12 l4">
-                                    <select name="" id="">
+                                <div class="input-field col s12 l12">
+                                    <select name="did" id="">
                                         <option value="" disabled selected>Select Destination</option>
                                         <?php
-                                 $sqls = "SELECT * FROM `cities` as a,`destination` as b  WHERE b.`to` =a.`city_id` and  b.`from` =a.`city_id`";
-                                 $result = $mysqli->query($sqls);
-                                 if ($result->num_rows > 0) {
-                                     while($row = $result->fetch_assoc()){
+                                         $sqls = "SELECT * FROM `destination`";
+                                         $result = $mysqli->query($sqls);
+                                         if ($result->num_rows > 0) {
+                                            while($row = $result->fetch_assoc()){
                                          ?>
                                          <option value="<?php echo $row['desitination_id'] ?>">
                                          From <?php echo $row['from']; ?> To <?php echo $row['to']; ?> </option>
@@ -159,7 +116,7 @@ include('incloud/condb.php');
                         </div>
                         <div class="row">
                             <div class="input-feild col s12 center">
-                                <button class="btn btn-larger waves-effect waves-light teal lighten-2" style="width:80%;">Add</button>
+                                <input type="submit" class="btn btn-larger waves-effect waves-light orange darken-1" style="width:80%;" name="addtrip" value="Add">
                             </div>
                         </div>
                     </div>
@@ -176,9 +133,9 @@ include('incloud/condb.php');
         </div>
     </footer>
 
-    <script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="assets/js/materialize.min.js"></script>
-    <script type="text/javascript" src="assets/js/my$cript.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../assets/js/materialize.min.js"></script>
+    <script type="text/javascript" src="../assets/js/my$cript.js"></script>
 </body>
 
 </html>

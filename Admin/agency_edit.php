@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8">
-  <link rel="icon" type="image/png" />
-  <link type="text/css" rel="stylesheet" href="assets/css/icons.css">
-  <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css" media="screen,projection" />
-  <link type="text/css" rel="stylesheet" href="assets/css/master.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Agency Edit</title>
-</head>
-
+<?php
+session_start();
+if(!isset($_SESSION['u_id']))
+{ header('location:index.php');}
+?>
+  <?php 
+include('incloud/head.php');
+      ?>
 <body>
   <main>
     <nav>
@@ -20,52 +15,9 @@
         </a>
       </div>
     </nav>
-    <ul id="slide-out" class="side-nav fixed borderNoShad teal lighten-2">
-      <ul class="collapsible" data-collapisble="accordion">
-        <li class="teal lighten-2">
-          <a class="collapsible-header active waves-effect white-text">Manage
-            <i class="glyphicon glyphicon-menu-down right white-text"></i>
-          </a>
-          <div class="collapsible-body">
-            <ul class="orange lighten-5">
-              <li class="active">
-                <a href="agency.php" class="waves-effect waves-light">Agency</a>
-              </li>
-              <li>
-                <a href="city.php" class="waves-effect waves-light">City</a>
-              </li>
-              <li>
-                <a href="destination.php" class="waves-effect waves-light">Destinations</a>
-              </li>
-              <li>
-                <a href="trip.php" class="waves-effect waves-light">Trip</a>
-              </li>
-              <li>
-                <a href="bus.php" class="waves-effect waves-light">Bus</a>
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li class="teal lighten-2">
-          <a class="collapsible-header waves-effect white-text">Reports
-            <i class="glyphicon glyphicon-menu-down right white-text"></i>
-          </a>
-          <div class="collapsible-body">
-            <ul class="orange lighten-5">
-              <li>
-                <a href="booking.php" class="waves-effect waves-light">Bookings</a>
-              </li>
-              <li>
-                <a href="agencies_reports.php" class="waves-effect waves-light">Agencies</a>
-              </li>
-              <li>
-                <a href="user.php" class="waves-effect waves-light">Users</a>
-              </li>
-            </ul>
-          </div>
-        </li>
-      </ul>
-    </ul>
+    <?php 
+include('incloud/nav.php');
+      ?>
     <div class="workspace">
       <div class="mainCnt white">
         <form action="">
@@ -95,7 +47,7 @@
             </div>
             <div class="row">
               <div class="input-feild col s12 center">
-                <button class="btn btn-larger waves-effect waves-light teal lighten-2" style="width:80%;">Save</button>
+                <button class="btn btn-larger waves-effect waves-light orange darken-1" style="width:80%;">Save</button>
               </div>
             </div>
           </div>
@@ -112,9 +64,9 @@
     </div>
   </footer>
 
-  <script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="assets/js/materialize.min.js"></script>
-  <script type="text/javascript" src="assets/js/my$cript.js"></script>
+  <script type="text/javascript" src="../assets/js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="../assets/js/materialize.min.js"></script>
+  <script type="text/javascript" src="../assets/js/my$cript.js"></script>
 </body>
 
 </html>

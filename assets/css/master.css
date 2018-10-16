@@ -1,0 +1,280 @@
+body {
+  background-color: #ebebeb;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+html::-webkit-scrollbar {
+  width: 10px;
+}
+
+html::-webkit-scrollbar-thumb {
+ background: rgb(92, 169, 107);
+}
+
+html::-webkit-scrollbar-track {
+  background: #Fff;
+}
+/*=======================
+--------Login Page-------
+ =======================*/
+/* .header h1 {
+  margin: 0;
+}
+
+.footer {
+  padding: 10px 10px;
+  color: #fff;
+  width: 100%;
+  bottom: 0;
+}
+
+.footer p {
+  margin: 0;
+} */
+
+.login-box {
+  background-color: rgba(255, 255, 255, 0.719);
+  border-radius: 10px;
+  width: 100%;
+  margin: auto;
+  z-index: 1;
+   box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14),
+   0 9px 46px 8px rgba(0, 0, 0, 0.12),
+   0 11px 15px -7px rgba(0, 0, 0, 0.2);
+
+}
+
+.login-space {
+  position: absolute;
+  margin: auto;
+  top: 25px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 40%;
+  /* background-image: url("../img/icon.png"); */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.btn.lgn {
+  width: 100%;
+  background-color: rgb(93, 64, 55);
+}
+
+/*==========================================
+---------------Menu------------------------
+============================================*/
+
+@media only screen and (max-width: 425px) {
+  .brand-logo.center {
+    font-size: 24px;
+  }
+  .login-img {
+    width: 30%;
+  }
+}
+
+@media only screen and (max-width: 382px) {
+  .brand-logo.center {
+    font-size: 18px;
+  }
+  .login-img {
+    width: 35%;
+  }
+}
+
+.borderNoShad {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: 0px 0px 1px black;
+}
+
+.side-nav li>a:hover {
+  background-color: rgba(#ee6e73, 0.54);
+  color: #000;
+}
+
+nav {
+  position: fixed;
+  z-index: 999 !important;
+  height: 49px;
+  top: 0;
+}
+
+.nav-wrapper {
+  height: 49px !important;
+  box-shadow: 0px 0px 0.5px #000;
+}
+
+.page-footer.a {
+  margin-left: 300px;
+  width: calc(100% - 300px);
+}
+
+.workspace {
+  padding: 10px 30px;
+  position: static;
+  margin-top: 61px;
+  margin-left: 300px;
+  /* height: 100%; */
+  /*border: 1px solid black;*/
+  width: calc(100% - 300px);
+}
+
+a.brand-logo.center {
+  height: 100%;
+}
+
+.mainCnt {
+  /* border: .5px solid black; */
+  margin-bottom: 25px;
+  box-shadow: 0px 0px 1px #666;
+  border-radius: 3px;
+}
+
+/* Screen with the size of 992px */
+@media only screen and (max-width: 992px) {
+  .page-footer.a {
+    margin: 0;
+    width: 100%;
+  }
+
+  .workspace {
+    width: 100%;
+    margin-left: 0;
+  }
+  .login-space {
+    width: 100%;
+  }
+  .login-box {
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: none;
+    margin: auto
+  }
+
+  .reg-box {
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: none;
+    margin: auto
+  }
+
+  .vis-on-med {
+    display: block !important;
+  }
+}
+
+.side-nav {
+  height: 100%;
+}
+
+#logo {
+  margin-left: 2%;
+}
+
+
+@media only screen and (max-width: 768px) {
+  div.row.col.s12.pt1 .input-field.col.s4 {
+    width: 100%;
+  }
+
+  div.row.col.s12.pt2 .input-field.col {
+    width: 100%;
+  }
+  .login-img {
+    width: 15%;
+  }
+}
+
+.bookingTable {
+  border-collapse: collapse;
+}
+
+.bookingTable thead tr {
+  background: #b2dfdb;
+  border-spacing: 0;
+}
+
+.bookingTable tbody tr td:nth-child(1) {
+  /* background: #b2dfdb; */
+}
+
+.bookingTable tbody tr {
+  padding: 0;
+}
+
+.customSearch {
+  margin: 0 !important;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.vis-on-med {
+  display: none;
+}
+
+.brand-name {
+  width: 40%;
+  margin-bottom: 50px;
+}
+@media only screen and (min-width: 768px) {
+  .brand-name {
+    width: 15%;
+    margin-bottom: 0;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .brand-name {
+    width: 30%;
+    margin-bottom: 10px;
+  }
+
+  .workspace {
+    padding: 0;
+   }
+}
+
+.auto-margin {
+  margin: auto;
+}
+
+.name {
+  text-shadow: 0 0 5px #000;
+  font-size: 17px !important;
+}
+
+
+
+.side-nav::-webkit-scrollbar {
+  width: 5px;
+}
+
+.side-nav::-webkit-scrollbar-thumb {
+  background: rgb(12, 77, 18);
+}
+
+.side-nav::-webkit-scrollbar-track {
+  background: #ddd;
+  border-radius: 20px;
+}
+
+.adeelaIcon {
+  width: 30px;
+  height: 30px;
+  margin: 9.5px 0 9.5px 0;
+}

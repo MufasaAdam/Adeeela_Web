@@ -1,19 +1,24 @@
 <?php 
+session_start();
+if(!isset($_SESSION['u_id']))
+{ header('location:index.php');}
 include('incloud/condb.php');
+if(isset($_POST['dadd'])){
+    $dfrom      =$_POST['dfrom'];
+    $dto        =$_POST['dto'];
+    $dfromar    =$_POST['dfromar'];
+    $dtoar      =$_POST['dtoar'];
+    $sql        ="INSERT INTO `destination`(`from`, `to`, `from_ar`, `to_ar`)  VALUES ('$dfrom','$dto',n'$dfromar',n'$dtoar')";
+    if($mysqli->query($sql)===true){
+                 ?> <script>alert('<?php echo'Your destination added Succsesfuly';?>');</script><?php
+                                   }else{
+        echo"Error:".$sql."<br>".$mysqli->error;
+    }
+}
 ?>	
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <link rel="icon" type="image/png" />
-    <link type="text/css" rel="stylesheet" href="assets/css/icons.css">
-    <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css" media="screen,projection" />
-    <link type="text/css" rel="stylesheet" href="assets/css/master.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Adeela</title>
-</head>
-
+  <?php 
+include('incloud/head.php');
+      ?>
 <body>
     <main>
         <nav>
@@ -23,52 +28,9 @@ include('incloud/condb.php');
                 </a>
             </div>
         </nav>
-        <ul id="slide-out" class="side-nav fixed borderNoShad teal lighten-2">
-            <ul class="collapsible" data-collapisble="accordion">
-                <li class="teal lighten-2">
-                    <a class="collapsible-header active waves-effect">Manage
-                        <i class="glyphicon glyphicon-menu-down right white-text"></i>
-                    </a>
-                    <div class="collapsible-body">
-                        <ul class="orange lighten-5">
-                            <li>
-                                <a href="agency.php" class="waves-effect waves-light">Agency</a>
-                            </li>
-                            <li>
-                                <a href="city.php" class="waves-effect waves-light">City</a>
-                            </li>
-                            <li class="active">
-                                <a href="destination.php" class="waves-effect waves-light">Destinations</a>
-                            </li>
-                            <li>
-                                <a href="trip.php" class="waves-effect waves-light">Trip</a>
-                            </li>
-                            <li>
-                                <a href="bus.php" class="waves-effect waves-light">Bus</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="teal lighten-2">
-                    <a class="collapsible-header waves-effect white-text">Reports
-                        <i class="glyphicon glyphicon-menu-down right white-text"></i>
-                    </a>
-                    <div class="collapsible-body">
-                        <ul class="orange lighten-5">
-                            <li>
-                                <a href="booking.php" class="waves-effect waves-light">Bookings</a>
-                            </li>
-                            <li>
-                                <a href="agencies_reports.php" class="waves-effect waves-light">Agencies</a>
-                            </li>
-                            <li>
-                                <a href="user.php" class="waves-effect waves-light">Users</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
-        </ul>
+       <?php 
+include('incloud/nav.php');
+      ?>
         <div class="workspace">
             <div class="mainCnt white">
                 <form action="destination.php" method="post">
@@ -89,20 +51,17 @@ include('incloud/condb.php');
                                  if ($result->num_rows > 0) {
                                      while($row = $result->fetch_assoc()){
                                          ?>
-                                         <option value="<?php echo $row['city_id'] ?>">
-                                         <?php echo $row['name_english']; ?>--<?php echo $row['name_arabic']; ?> </option>
+                                         <option value="<?php echo $row['name_english'] ?>">
+                                         <?php echo $row['name_english']; ?> </option>
                                          <?php
                                          }
-                                        }
-                                        else{
-                                            echo "ERoor";
                                         }
                                         ?>
                             </select>
                             <label>From</label>
                         </div>
                         <div class="input-field col s12 l6">
-                            <select name="dto" id="">
+                            <select name="dto" id="" required>
                                 <option value="" disabled selected>Select To</option>
                                 <?php
                                  $sqls = "SELECT * FROM  `cities`";
@@ -110,8 +69,8 @@ include('incloud/condb.php');
                                  if ($result->num_rows > 0) {
                                      while($row = $result->fetch_assoc()){
                                          ?>
-                                         <option value="<?php echo $row['city_id'] ?>">
-                                         <?php echo $row['name_english']; ?>--<?php echo $row['name_arabic']; ?> </option>
+                                         <center><option value="<?php echo $row['name_english'] ?>">
+                                         <?php echo $row['name_english']; ?></option></center>
                                          <?php
                                          }
                                         }
@@ -123,43 +82,51 @@ include('incloud/condb.php');
                             <label for="">To</label>
                         </div>
                         <div class="row">
-
                         <div class="input-field col s12 l6">
-                        <select name="" id="">
-                        <option value="" selected disabled>إختار إلى</option>
-                        </select>
-                        <label for="">إلى</label>
-                        </div>
-
-                        <div class="input-field col s12 l6">
-                        <select name="" id="">
+                        <select name="dfromar" id="">
                         <option value="" selected disabled>إختار من</option>
+                        <?php
+                                 $sqls = "SELECT * FROM  `cities`";
+                                 $result = $mysqli->query($sqls);
+                                 if ($result->num_rows > 0) {
+                                     while($row = $result->fetch_assoc()){
+                                         ?>
+                                         <option value="<?php echo $row['name_arabic'] ?>">
+                                         <?php echo $row['name_arabic']; ?> </option>
+                                         <?php
+                                         }
+                                        }
+                                        ?>
                         </select>
                         <label for="">من</label>
+                        </div>
+                        <div class="input-field col s12 l6">
+                        <select name="dtoar">
+                        <option value="" selected disabled>إختار إلى</option>
+                        <?php
+                                 $sqls = "SELECT * FROM  `cities`";
+                                 $result = $mysqli->query($sqls);
+                                 if ($result->num_rows > 0) {
+                                     while($row = $result->fetch_assoc()){
+                                         ?>
+                                         <option value="<?php echo $row['name_arabic'] ?>">
+                                         <?php echo $row['name_arabic']; ?> </option>
+                                         <?php
+                                         }
+                                        }
+                                        ?>
+                        </select>
+                        <label for="">إلى</label>
                         </div>
 
                         </div>
                         <div class="row">
                             <div class="input-feild col s12 center">
-                                <input type="submit" name="dadd" class="btn btn-larger waves-effect waves-light teal lighten-2" style="width:80%;" value="Add">
+                                <input type="submit" name="dadd" class="btn btn-larger waves-effect waves-light orange darken-1" style="width:80%;" value="Add">
                             </div>
                         </div>
                     </div>
                 </form>
-             <?php
-                if(isset($_POST['dadd'])){
-                    $dfrom    =$_POST['dfrom'];
-                    $dto    =$_POST['dto'];
-                    $sql       ="INSERT INTO `destination`(`from`, `to`) VALUES ('$dfrom','$dto')";
-                    if($mysqli->query($sql)===true){
-                                 ?> <script>alert('<?php echo'Your destination added Succsesfuly';?>');</script><?php
-                                               }
-                                               else
-                                               {
-                                                   echo"Error:".$sql."<br>".$mysqli->error;
-                                                }
-                                            }
-                                            ?>
             </div>
         </div>
     </main>
@@ -172,9 +139,9 @@ include('incloud/condb.php');
         </div>
     </footer>
 
-    <script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="assets/js/materialize.min.js"></script>
-    <script type="text/javascript" src="assets/js/my$cript.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../assets/js/materialize.min.js"></script>
+    <script type="text/javascript" src="../assets/js/my$cript.js"></script>
 </body>
 
 </html>
